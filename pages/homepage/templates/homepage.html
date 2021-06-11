@@ -1,7 +1,274 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html dir="rtl" lang="he" xmlns="http://www.w3.org/1999/html">
+<head>
+     <meta charset="UTF-8">
 
-{% set page_head_title = 'Homepage' %}
+    <title> עינת עשהאל - דיאטנית קלינית - עמוד הבית</title>
 
-{% block page_body_main_content %}
-    Welcome!
-{% endblock %}
+    <link rel="stylesheet" href={{ url_for('homePage.static', filename='/css/homePage.css') }} >
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="../../../PartB/js/script1_main.js?v3" type="text/javascript"></script>
+
+</head>
+
+<!-- Currenr month and year on-load-->
+<body>
+<div class="grid-container"  >
+
+
+        <div class="header"  >
+            <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+        </div>
+
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
+
+                            <div class="column"><li><a href="1_homePage.html" width="16.6%" style="width:100%">ראשי</a> </li> </div>
+
+                            <div class="column"><li><a href="../../../PartB/html/2_aboutPage.html" width="16.6%" style="width:100%">אודות</a> </li> </div>
+
+                            <div class="column"> <li><a href="../../../PartB/html/3_approachPage.html" width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"><li><a href="../../../PartB/html/4_tipsPage.html" width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href="../../../PartB/html/5_personalStoriesPage.html" width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column">  <li><a href="../../../PartB/html/6_forumPage.html" width="16.6%" style="width:100%">פורום</a></li>  </div>
+
+                            <div class="column">   <li><a href="../../../PartB/html/7.1_login.html" width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+
+                            <div class="column">  <li><a href="../../../PartB/html/8_contactPage.html" width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='9_schedulePage.html';" style="float: right">קביעת תור  </a></button>
+                            </div>
+                        </ul>
+                    </div>
+
+        <div class="image"><br>
+        <img src="{{ url_for('homePage.static', filename='/media/picEinat.jpg') }}" alt="Picture" width="100%">
+        </div>
+
+        <!--<style>
+            .{
+                    padding-left: 100px;
+                border;
+                }
+        </style>-->
+
+        <div class="reccomands">
+            <h1>המלצות</h1>
+            <h3>8 טיפים ממני:</h3>
+            <div class="reccomands-grid">
+
+                <br>
+                <br>
+                <div class="reccomands-grid-right">
+                    <li>תספקו לגוף שלכם את מה שהוא מבקש</li>
+                         <br>
+                    <li>אל תתבססו על תפריטים </li>
+                         <br>
+                    <li>כל אחד והגוף שלו</li>
+                         <br>
+                    <li>לא להרעיב את הגוף </li>
+                         <br>
+                </div>
+                <div class="reccomands-grid-left">
+                    <li>חשוב לאכול כשרעבים ולעצור כששבעים </li>
+                         <br>
+                    <li> הצורך למתוק הוא צורך אמיתי!!!! </li>
+                         <br>
+                    <li> פעילות ספורטיבית </li>
+                         <br>
+                    <li> מה שחשוב זה הכמות והאם אני רעב </li>
+                         <br>
+                </div>
+            </div>
+            <a href="../../../PartB/html/4_tipsPage.html">להמשך קריאה...</a>
+                     <br><br><br>
+
+        </div>
+            <style>
+                .reccomands li{
+                    font-size: 70%;
+                    text-align: center;
+                }
+
+                .reccomands-grid{
+                    padding-right: 200px;
+                    padding-top: 30px;
+                }
+
+                .personalStories td{
+                    font-size: 70%;
+                }
+            </style>
+
+        <div class="personalStories">
+            <h2>סיפורים אישיים</h2>
+                     <div class="jquery-script-center">
+                    <div id="carbon-block"></div>
+                    <div class="jquery-script-ads">
+                        <script type="text/javascript">
+                        google_ad_client = "ca-pub-2783044520727903";
+                        /* jQuery_demo */
+                        google_ad_slot = "2780937993";
+                        google_ad_width = 728;
+                        google_ad_height = 90;
+                        //-->
+                       </script>
+                    <script type="text/javascript"
+                    src="https://pagead2.googlesyndication.com/pagead/show_ads.js">
+                    </script></div>
+                    <div class="jquery-script-clear"></div>
+                 </div>
+
+
+            <div class="container">
+            <div class="row">
+            <div class="col-md-6">
+            <div class="card panel-default">
+            <div class="card-header"> <span class="glyphicon glyphicon-list-alt"></span></div>
+            <div class="card-body">
+            <div class="row">
+            <div class="col-xs-12">
+            <ul class="demo1">
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/1.png" width="60" class="img-circle" /></td>
+            <td>מיכל, 42 חיפה<br>
+                בזכות עינת הצלחתי לעמוד במטרות שהצבתי לעצמי. החיים שלי השתנו מקצה לקצה. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/2.jpg" width="60" class="img-circle" /></td>
+            <td>יובל, 23 כפר סבא<br>
+                עינת מקצועית מאוד, עזרה לי לבנות תוכנית אישית ובעלת קשב רב לכל בעיה. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/2.1.jpg" width="60" class="img-circle" /></td>
+            <td>רון, 25 רמת גן<br>
+                עינת קשובה לכל בעיה, הפגישות איתה תמיד לימדו אותי דברים חדשים שקל לי ליישם ביומיום. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/4.jpg" width="60" class="img-circle" /></td>
+            <td>ירון, 38 רחובות<br>
+                בזכות השיטה הייחודית של עינת הצלחתי לשנות את הרגלי התזונה שלי. מרגיש אנרגטי יותר. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/5.jpg" width="60" class="img-circle" /></td>
+            <td>משה, 52 שובל<br>
+                כאדם טבעוני תמיד התקשתי ליצור לי תפריט מאוזן. עינת עזרה לי מאוד לבנות תפריט נכון עבורי. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/6.jpg" width="60" class="img-circle" /></td>
+            <td>נועה, 28 נתניה<br>
+                התפריט שעינת בנתה לי מלווה אותי כבר מספר חודשים. אני מאוד אוהבת את הגיוון שהיא הכניסה בו. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            <li class="news-item">
+            <table cellpadding="4">
+            <tr>
+            <td><img src="../static/media/7.jpg" width="60" class="img-circle" /></td>
+            <td>רחל, 44 ראשון לציון<br>
+                עינת אלופה. תמיד אפשר להתייעץ איתה. נותנת את כל הכלים שצריך בשביל להצליח ובגדול. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
+            </tr>
+            </table>
+            </li>
+            </ul>
+            </div>
+            </div>
+            </div>
+            <div class="card-footer"> </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    $(".demo1").bootstrapNews({
+                        newsPerPage: 3,
+                        autoplay: true,
+                        pauseOnHover:true,
+                        direction: 'up',
+                        newsTickerInterval: 4000,
+                        onToDo: function () {
+                            //console.log(this);
+                        }
+                    });
+                });
+            </script>
+            <script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-36251023-1']);
+              _gaq.push(['_setDomainName', 'jqueryscript.net']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+            <script>
+            try {
+              fetch(new Request("https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js", { method: 'HEAD', mode: 'no-cors' })).then(function(response) {
+                return true;
+              }).catch(function(e) {
+                var carbonScript = document.createElement("script");
+                carbonScript.src = "//cdn.carbonads.com/carbon.js?serve=CK7DKKQU&placement=wwwjqueryscriptnet";
+                carbonScript.id = "_carbonads_js";
+                document.getElementById("carbon-block").appendChild(carbonScript);
+              });
+            } catch (error) {
+              console.log(error);
+            }
+            </script>
+        </div>
+
+        <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+            <ul>
+                <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+
+              </ul>
+            </div>
+        </div>
+   </div>
+
+</body>
+</html>

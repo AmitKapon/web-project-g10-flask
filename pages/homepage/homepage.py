@@ -1,16 +1,16 @@
 from flask import Blueprint, render_template, redirect, url_for
 
 # homepage blueprint definition
-homepage = Blueprint('homepage', __name__, static_folder='static', static_url_path='/homepage', template_folder='templates')
+homePage = Blueprint('homePage', __name__, static_folder='static', static_url_path='/homePage', template_folder='templates')
 
 
 # Routes
-@homepage.route('/')
+@homePage.route('/')
 def index():
-    return render_template('homepage.html')
+    return render_template('homePage.html')
 
 
-@homepage.route('/homepage')
-@homepage.route('/home')
+@homePage.route('/homePage')
+@homePage.route('/home')
 def redirect_homepage():
-    return redirect(url_for('homepage.index'))
+    return redirect(url_for('homePage.index'))

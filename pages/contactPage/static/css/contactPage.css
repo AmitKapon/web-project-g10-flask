@@ -5,6 +5,51 @@
     padding: 0;
     margin: 0;
 }
+p{
+ font-size: 70%;
+}
+
+
+.field{
+	width: 68%;
+	border: 2px solid rgba(0, 0, 0, 0);
+	outline: none;
+	background-color: rgba(230, 230, 230, 0.6);
+	padding: 0.5rem 1rem;
+	font-size: 0.7rem;
+	margin-bottom: 18px;
+	transition: .3s;
+    text-align: right;
+}
+
+.field:hover{
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.contact-box{
+    grid-area: form;
+}
+
+.btn{
+	width: 68%;
+	padding: 0.5rem 1rem;
+	background-color: #dd6c9f;
+	color: #fff;
+	font-size: 0.8rem;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: .3s;
+}
+
+.btn:hover{
+    background-color: #8a4a6e;
+}
+
+.field:focus{
+    border: 2px solid rgba(30,85,250,0.47);
+    background-color: #fff;
+}
 
 root{
     --russian-violet: hsla(250, 78%, 11%, 1);
@@ -27,16 +72,18 @@ font-size: 100%;
     height: 100vh;
     grid-template-areas:
             'head head head head'
-            'nava nava nava nava'
-            'side cont cont pict'
+            'nava nava nava nava '
+            'page page page page'
             'con1 con1 con1 con1';
 }
 
 .header {
+
     grid-area: head;
     /*border: white solid;*/
     text-align: center;
     font-size: 200%;
+    color: #dd6c9f;
 
 
 }
@@ -46,84 +93,67 @@ font-size: 100%;
            border: white solid;
            text-align: left;
            font-size: 100%;
-
-}
-
-    /*   .headerMenu button{
-           padding-right: 30px;
-       }*/
-
-
-.button{
-    grid-area: butt;
-    font-size: 40px;
-    align-self: center;
 }
 
 .column{
-
     float: right ;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5%;
 }
 
-.image{
-    grid-area: pict;
-    /*border: white solid;*/
-}
+.page{
 
-.personalStories{
-    grid-area: side;
-    /*
+    grid-area: page;
     border: white solid;
-    */
     text-align: center;
     font-size: 150%;
-}
-.reccomands{
-    grid-area: cont;
-    /*border: white solid;*/
-    text-align: center;
-    font-size: 150%;
-}
-
-.reccomands-grid{
-    display: grid;
-    grid-template-areas: 'left right';
-}
-
-.reccomands-grid-left{
-    grid-area: left;
-}
-
-.reccomands-grid-right{
-    grid-area: right;
-}
-.image img{
-    border-style: groove;
-    padding-left: 100px;
 }
 
 .contact{
     grid-area: con1;
+
    /* border: white solid;
     text-align: center;*/
     margin: auto;
 }
+.contact-grid{
+    grid-gap: 2px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 53vh;
+    grid-template-areas:
+            'form details';
+}
+
+ul.details li{
+    display: flex;
+    background: rgba(255,255,255,0.1);
+    padding: 10px 20px;
+    margin: 5px 0;
+    transition: .5s;
+}
+
+ul.details li span:nth-child(1){
+    width: 50%;
+    background: rgba(255,255,255,0.1);
+}
+ul.details li span:nth-child(2){
+    width: 40%;
+    background: rgba(255,255,255,0.1);
+}
+.phone-details{
+
+}
+
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-
 }
 
-li {
-  float: right;
-
-}
 
 li a {
   display: block;
@@ -138,18 +168,18 @@ li a:hover {
 color: #ff7300;
 }
 
-
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background: #000;
+.details{
+    grid-area: details;
+    position: relative;
+    width: 450px;
+    margin: 6px;
+    align-items: flex-start;
+    font-size: 75%;
+    color: white;
+    list-style: none;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .glow-on-hover {
@@ -163,7 +193,6 @@ body {
     position: relative;
     z-index: 0;
     border-radius: 10px;
-    padding-right: 30px;
 }
 
 .glow-on-hover:before {
@@ -196,6 +225,7 @@ body {
     opacity: 1;
 }
 
+
 .glow-on-hover:after {
     z-index: -1;
     content: '';
@@ -214,11 +244,6 @@ body {
     100% { background-position: 0 0; }
 }
 
-/* Let's style the wrapper in such away that,
-it should always be at the center of the browser */
-.wrapper {
-
-}
 /* Style the Un-order list by setting its list-style to none */
 .wrapper ul {
   list-style: none;
@@ -341,4 +366,10 @@ to align it properly */
   .wrapper ul li.google{
       margin-left: 15px;
   }
+}
+
+.main-forum button{
+    background: #dd6c9f;
+    font-size: 50%;
+    display: inline-block;
 }
