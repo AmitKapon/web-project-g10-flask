@@ -5,18 +5,16 @@
 
     <title> עינת עשהאל - דיאטנית קלינית - עמוד הבית</title>
 
-    <link rel="stylesheet" href={{ url_for('homePage.static', filename='/css/homePage.css') }} >
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href={{ url_for('homePage.static', filename='/css/homePage.css') }} >
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="../../../PartB/js/script1_main.js?v3" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="../../../PartB/js/script1_main.js?v3" type="text/javascript"></script>
 
 </head>
-
 <!-- Currenr month and year on-load-->
 <body>
 <div class="grid-container"  >
@@ -29,24 +27,24 @@
     <div class="headerMenu" >
                         <ul class = "Navbar" >
 
-                            <div class="column"><li><a href="1_homePage.html" width="16.6%" style="width:100%">ראשי</a> </li> </div>
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
 
-                            <div class="column"><li><a href="../../../PartB/html/2_aboutPage.html" width="16.6%" style="width:100%">אודות</a> </li> </div>
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
 
-                            <div class="column"> <li><a href="../../../PartB/html/3_approachPage.html" width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
 
-                            <div class="column"><li><a href="../../../PartB/html/4_tipsPage.html" width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
 
-                            <div class="column"> <li><a href="../../../PartB/html/5_personalStoriesPage.html" width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
 
-                            <div class="column">  <li><a href="../../../PartB/html/6_forumPage.html" width="16.6%" style="width:100%">פורום</a></li>  </div>
-
-                            <div class="column">   <li><a href="../../../PartB/html/7.1_login.html" width="16.6%" style="width:100%">איזור אישי</a></li> </div>
-
-                            <div class="column">  <li><a href="../../../PartB/html/8_contactPage.html" width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column">   <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column">  <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
 
                             <div class ="button">
-                            <button class="glow-on-hover" type="button" onclick="window.location.href='9_schedulePage.html';" style="float: right">קביעת תור  </a></button>
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='9_schedulePage.html';" style="float: right">קביעת תור  </button>
                             </div>
                         </ul>
                     </div>
@@ -142,7 +140,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/1.png" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/1.png') }}" width="60" class="img-circle" /></td>
             <td>מיכל, 42 חיפה<br>
                 בזכות עינת הצלחתי לעמוד במטרות שהצבתי לעצמי. החיים שלי השתנו מקצה לקצה. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -151,7 +149,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/2.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/2.jpg') }}" width="60" class="img-circle" /></td>
             <td>יובל, 23 כפר סבא<br>
                 עינת מקצועית מאוד, עזרה לי לבנות תוכנית אישית ובעלת קשב רב לכל בעיה. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -160,7 +158,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/2.1.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/2.1.jpg') }}" width="60" class="img-circle" /></td>
             <td>רון, 25 רמת גן<br>
                 עינת קשובה לכל בעיה, הפגישות איתה תמיד לימדו אותי דברים חדשים שקל לי ליישם ביומיום. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -169,7 +167,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/4.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/4.jpg') }}" width="60" class="img-circle" /></td>
             <td>ירון, 38 רחובות<br>
                 בזכות השיטה הייחודית של עינת הצלחתי לשנות את הרגלי התזונה שלי. מרגיש אנרגטי יותר. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -178,7 +176,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/5.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/5.jpg') }}" width="60" class="img-circle" /></td>
             <td>משה, 52 שובל<br>
                 כאדם טבעוני תמיד התקשתי ליצור לי תפריט מאוזן. עינת עזרה לי מאוד לבנות תפריט נכון עבורי. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -187,7 +185,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/6.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/6.jpg') }}" width="60" class="img-circle" /></td>
             <td>נועה, 28 נתניה<br>
                 התפריט שעינת בנתה לי מלווה אותי כבר מספר חודשים. אני מאוד אוהבת את הגיוון שהיא הכניסה בו. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>
@@ -196,7 +194,7 @@
             <li class="news-item">
             <table cellpadding="4">
             <tr>
-            <td><img src="../static/media/7.jpg" width="60" class="img-circle" /></td>
+            <td><img src="{{ url_for('homePage.static', filename='/media/7.jpg') }}" width="60" class="img-circle" /></td>
             <td>רחל, 44 ראשון לציון<br>
                 עינת אלופה. תמיד אפשר להתייעץ איתה. נותנת את כל הכלים שצריך בשביל להצליח ובגדול. <a href="../../../PartB/html/5_personalStoriesPage.html">להמשך קריאה...</a></td>
             </tr>

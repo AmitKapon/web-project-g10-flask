@@ -7,7 +7,7 @@ app.config.from_pyfile('settings.py')
 
 ###### Pages
 ## Homepage
-from pages.homePage.homePage import homePage
+from pages.homepage.homepage import homePage
 app.register_blueprint(homePage)
 #
 # ## About
