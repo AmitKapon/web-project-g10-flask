@@ -1,7 +1,9 @@
 from flask import Blueprint, render_template
 
 # personalStoryPage blueprint definition
-personalStoryPage = Blueprint('personalStoryPage', __name__, static_folder='static', static_url_path='/personalStoryPage', template_folder='templates')
+personalStoryPage = Blueprint('personalStoryPage', __name__, static_folder='static',
+                                                             static_url_path='/personalStoryPage',
+                                                             template_folder='templates')
 
 
 # Routes

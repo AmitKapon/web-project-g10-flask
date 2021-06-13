@@ -1,1 +1,82 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('approachPage.static', filename='/css/approachPage.css') }}" >
+    <title>עינת עשהאל-גישות טיפול</title>
+</head>
+<body>
+<div class="grid-container" >
 
+    <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
+
+   <!--Click Bar-->
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
+
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
+
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
+
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column">   <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column">  <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
+                            </div>
+                        </ul>
+                    </div>
+
+    <!--Page content-->
+        <div class="page"><br>
+            <h2>גישת הטיפול</h2>
+                <p>
+                    <br><br><br>הטיפול שלי מתבסס על הקשר בין הגוף והנפש, במהלכו אני קשובה לצרכיו הנפשיים של המטופל אשר מספק אותם דרך האוכל.<br><br><br><br><br>
+
+                    איני נותנת תפריטים כיוון שהם "מתערבים" באופן חיצוני במהלכי וצרכי גוף המטופל,<br><br>
+                                        אלא מלמדת כל מטופל להקשיב לצרכים הללו, לדעת להבין מתי הוא רעב ומתי הוא שבע - כך הוא יכול להנות מכל מה שהוא אוהב לאכול וכמה שהוא רוצה.<br><br>
+                                        בדרך זו הוא חוסך מהגוף שלו לייצר חסך ובהמשך סטרס ודחף לאכול את מה שנמנע ממנו.<br><br><br><br><br>
+
+                    אני מתבססת בנוסף על הידיעה כי כל גוף זקוק לכמות מסוימת של קלוריות ליום המשתנה בין גוף לגוף. במידה ואוכלים מעבר לכמות הזאת, תהיה עלייה במשקל ולהפך. אך לא בעקבות מה שנאכל..<br><br>
+
+                    אני מסבירה שגם אם נאכל מזונות שתורמים יותר לסל הקלוריות היומי זה לאו דווקא גורר לכך שהגוף יקבל מכסת קלוריות עודפת וישמין וזאת מפני שמאכלים אלה הם יותר משביעים ונהיה פחות רעבים במהלך היום.<br><br>
+                                        לא חשוב מה אוכלים, חשוב כמה והאם היינו רעבים.
+                    כמובן עבור כאלה עם כולסטרול גבוה זה סיפור אחר, אבל עבור אדם עם כולסטרול תקין אין בהכרח שמאכל שומני אינו בריא לו.
+                </p>
+        </div>
+
+            <style>
+            .page p{
+                font-size: 75%;
+            }
+            </style>
+
+        <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="google"><a href="https://www.google.com/" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+   </div>
+
+</body>
+</html>

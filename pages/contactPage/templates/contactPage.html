@@ -9,33 +9,33 @@
 {#<script src="../js/script6_forum.js"></script>#}
 <div class="grid-container" >
 
-    <!--Header & Logo-->
-        <div class="header" >
-            <h1><img src="../../pages/homePage/static/media/piclogo.png" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית</h1>
-        </div>
+   <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
 
-    <!--Click Bar-->
+   <!--Click Bar-->
     <div class="headerMenu" >
                         <ul class = "Navbar" >
 
-                            <div class="column"><li><a href="../../pages/homePage/templates/1_homePage.html" width="16.6%" style="float: left ">ראשי</a> </li> </div>
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
 
-                            <div class="column"><li><a href="2_aboutPage.html" width="16.6%" style="float: left ">אודות</a> </li> </div>
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
 
-                            <div class="column"> <li><a href="3_approachPage.html" width="16.6%" style="float: left ">גישת הטיפול</a></li> </div>
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
 
-                            <div class="column"><li><a href="4_tipsPage.html" width="16.6%" style="float: left "> טיפים והמלצות</a></li></div>
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
 
-                            <div class="column"> <li><a href="5_personalStoriesPage.html" width="16.6%" style="float: left ">סיפורי הצלחה</a></li></div>
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
 
-                            <div class="column">  <li><a href="6_forumPage.html" width="16.6%" style="float: left ">פורום</a></li>  </div>
-
-                            <div class="column">   <li><a href="7.1_login.html" width="16.6%" style="float: left ">איזור אישי</a></li> </div>
-
-                            <div class="column">  <li><a href="8_contactPage.html" width="16.6%" style="float: left ">יצירת קשר</a></li> </div>
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column">   <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column">  <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
 
                             <div class ="button">
-                            <button class="glow-on-hover" type="button" onclick="window.location.href='9_schedulePage.html';" style="font-family:'Baskerville Old Face' ; float: right">קביעת תור  </a></button>
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
                             </div>
                         </ul>
                     </div>
@@ -75,51 +75,20 @@
 		    </div>
         </div>
 
-    <!--contact bar-->
+      <!--contact bar-->
         <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
             <div class="wrapper" style="background-color: #002bff">
-            <ul>
-                <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-                <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
-                <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
-
-              </ul>
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="google"><a href="https://www.google.com/" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
             </div>
         </div>
-
    </div>
-<!--3contact form-->
-        <div class="cont">
-            <form>
 
-
-                <div class="column"><a>
-                     <label for="FullName"></label>
-                     <input type="text" id="FullName" name="FullName" placeholder="Full Name" width="30%" style=" color: white; width: 100%;"  required>
-                </a></div>
-
-                <div class="column"><a
-                    ><label for="Phone"></label>
-                    <input type="text" id="Phone" name="Phone" placeholder="Phone Number"width="30%" style=" color: white;width: 100%;"  >
-                </a></div>
-
-                <div class="column"><a
-                    ><label for="Email"></label>
-                    <input type="text" id="Email" name="Email" placeholder="Email Address" width="30%" style=" color: white; width: 100%;"  required>
-                </a></div>
-
-                <div class="comment"><a>
-                    <label for="Comment"></label>
-                    <textarea  id="Comment" name="Comment" cols="50" rows="4" placeholder="Write a comment .." width="60%" style=" color: white; width: 60%;" required></textarea>
-                </a></div>
-
-                <div class="column"><a>
-                <button  >Send</button>
-                </a></div>
-            </form>
-        </div>
 </body>
 </html>
 

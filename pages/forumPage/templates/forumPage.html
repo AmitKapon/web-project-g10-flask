@@ -1,18 +1,293 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('forumPage.static', filename='/css/forumPage.css') }}" >
+    <title>עינת עשהאל- פורום</title>
+</head>
+<body>
+<div class="grid-container" >
 
-{% set page_head_title = 'About' %}
+    <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
 
-{% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
-{% endblock %}
+   <!--Click Bar-->
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
 
-{% block page_body_main_content %}
-    <h1>About us</h1>
-    <p>This is an example about us page</p>
-{% endblock %}
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
 
-{% block page_body_footer %}{% endblock %}
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
 
-{% block page_body_js %}
-    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
-{% endblock %}
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column"> <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column"> <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column"> <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
+                            </div>
+                        </ul>
+                    </div>
+
+
+    <!--Page content-->
+        <div class="page">
+            <div class="forum">
+            <div class="top-bar">
+                <h1>
+                    פורום שאלות
+                 </h1>
+            </div>
+            <div class="main-forum">
+                <div class="header-forum">
+                </div>
+                <label>כתוב תגובה:</label>
+                <textarea ></textarea><br><br><br>
+                 <label>שם:</label>
+                 <input>
+                <button>הוסף תגובה</button>
+                <div class="comments-forum">
+                </div>
+            </div>
+
+            <script src="script2_data.js"></script>
+            <script>
+                var id = window.location.search.slice(1);
+                var thread = threads.find(t => t.id == id);
+                var header = document.querySelector('.header');
+                var headerHtml = `
+                    <h4 class="title-forum">
+                        ${thread.title}
+                    </h4>
+                <div class="bottom-forum">
+                    <p class="timestamp-forum">
+                        ${new Date(thread.date).toLocaleString()}
+                    </p>
+                    <p class="comment-count">
+                        ${thread.comments.length} comments
+                    </p>
+                </div>
+            </div>
+        `
+            header.insertAdjacentHTML('beforeend', headerHtml)
+
+        function addComment(comment) {
+            var commentHtml = `
+                <div class="comment">
+                    <div class="top-comment">
+                        <p class="user">
+                            ${comment.author}
+                        </p>
+                        <p class="comment-ts">
+                            ${new Date(comment.date).toLocaleString()}
+                        </p>
+                    </div>
+                    <div class="comment-content">
+                        ${comment.content}
+                    </div>
+                </div>
+            `
+                    comments.insertAdjacentHTML('beforeend', commentHtml);
+                }
+
+                var comments = document.querySelector('.comments');
+                for (let comment of thread.comments) {
+                    addComment(comment);
+                }
+
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function() {
+                    var txt = document.querySelector('textarea');
+                    var comment = {
+                        content: txt.value,
+                        date: Date.now(),
+                        author: 'Aaron'
+                    }
+                    addComment(comment);
+                    txt.value = '';
+                    thread.comments.push(comment);
+                    localStorage.setItem('threads', JSON.stringify(threads));
+                })
+            </script>
+    <style>
+        .forum {
+            margin: 10px 60px;
+            border: white solid;
+
+        }
+        .forum a {
+            text-decoration: none;
+            color: black;
+        }
+        .forum h1{
+            font-size: 80%;
+        }
+        .forum h4, ol {
+            margin: 0;
+        }
+        .forum p {
+            margin: 5px 0;
+        }
+        .forum textarea {
+            width: 50%;
+            height: 40px;
+            font-size: 40%;
+        }
+        .forum button {
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 90%;
+        }
+        .top-bar {
+            background-color: skyblue;
+            padding: 0 40px;
+        }
+        .comments-forum {
+            margin: 40px 0;
+        }
+        .comment {
+            margin: 10px 0;
+        }
+        .row-forum {
+            padding: 5px 0;
+        }
+        .bottom-forum, .top-comment {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .timestamp-forum {
+            padding-right: 10px;
+        }
+        .comment-ts {
+            padding-left: 10px;
+        }
+
+         .main-forum {
+                    font-size: 70%;
+             padding: 10px 40px;
+                }
+
+                .main-forum label{
+		            display: inline-block;
+		            text-align: right;
+		            float: center;
+                }
+
+                .main-forum input{
+                    display: inline-block;
+                    text-align: left;
+                    float: center;
+                }
+                .main-forum textarea{
+                    display: inline-block;
+                    text-align: right;
+                    float: center;
+                    font-size: 50%;
+                }
+                 .main-forum button{
+                    display: inline-block;
+                    float: center;
+                }
+        </style>
+        </div>
+        </div>
+
+       <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="google"><a href="https://www.google.com/" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+   </div>
+
+</body>
+<body class="forums">
+    <div class="top-bar">
+        <h1>
+            פורום שאלות
+        </h1>
+    </div>
+    <div class="mainForum">
+        <ol>
+        </ol>
+    </div>
+    <script src="script2_data.js"></script>
+    <script>
+        console.log(threads);
+        var container = document.querySelector('ol');
+        for (let thread of threads) {
+            var html = `
+            <li class="row">
+                <a href="6_forumPage.html?${thread.id}">
+                    <h4 class="title">
+                        ${thread.title}
+                    </h4>
+                    <div class="bottom">
+                        <p class="timestamp">
+                            ${new Date(thread.date).toLocaleString()}
+                        </p>
+                        <p class="comment-count">
+                            ${thread.comments.length} comments
+                        </p>
+                    </div>
+                </a>
+            </li>
+            `
+            container.insertAdjacentHTML('beforeend', html);
+        }
+    </script>
+    <style>
+        .forums body {
+            margin: 10px 60px;
+        }
+        .forums a {
+            text-decoration: none;
+            color: black;
+        }
+        .forums h1, h4, ol {
+            /*background: skyblue;*/
+            margin: 0;
+        }
+        .forums p {
+            margin: 5px 0;
+        }
+        .forums .top-bar {
+            background-color: skyblue;
+            padding: 0 40px;
+        }
+        .forums .main {
+            background-color: #F6F6EF;
+            padding: 10px 15px;
+        }
+        .forums .row {
+            padding: 5px 0;
+        }
+        .forums .bottom {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .forums .timestamp {
+            padding-right: 10px;
+        }
+    </style>
+</body>
+</html>

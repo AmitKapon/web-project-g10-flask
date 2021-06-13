@@ -1,18 +1,106 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-{% set page_head_title = 'About' %}
+    <link rel="stylesheet" href="{{ url_for('schedulePage.static', filename='/css/schedulePage.css') }}" >
+    <title>עינת עשהאל- קביעת תורים</title>
 
-{% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
-{% endblock %}
 
-{% block page_body_main_content %}
-    <h1>About us</h1>
-    <p>This is an example about us page</p>
-{% endblock %}
+  </head>
 
-{% block page_body_footer %}{% endblock %}
+  <body>
+    <div class="grid-container" id="container" >
 
-{% block page_body_js %}
-    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
-{% endblock %}
+    <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
+
+   <!--Click Bar-->
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
+
+                            <div class="column"> <li><a href='/' width="16.6%" style="width:100%">ראשי</a></li> </div>
+
+                            <div class="column"> <li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
+
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"> <li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column">  <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
+                            </div>
+                        </ul>
+     </div>
+
+      <div class="buttoncalender" id="header">
+        <div id="monthDisplay"></div>
+        <div>
+          <button id="backButton">הקודם</button>
+          <button id="nextButton">הבא</button>
+        </div>
+      </div>
+
+        <!--Page content-->
+        <div class="page" > קביעת תור
+              <div class="weekdays" id="weekdays" >
+                <div>ראשון</div>
+                <div>שני</div>
+                <div>שלישי</div>
+                <div>רביעי</div>
+                <div>חמישי</div>
+                <div>שישי</div>
+                <div>שבת</div>
+              </div>
+             <div class="calender" id="calendar" ></div>
+        </div>
+
+        <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+            <ul>
+                <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+        </div>
+</div>
+
+            <div id="newEventModal">
+                  <h2>יצירת תור חדש</h2>
+
+                  <input id="eventTitleInput" placeholder="הכנסת שם מלא" />
+
+                  <button id="saveButton">שמירה</button>
+                  <button id="cancelButton">ביטול</button>
+            </div>
+
+            <div id="deleteEventModal">
+                 <h2>אירוע</h2>
+
+                 <p id="eventText"></p>
+
+                 <button id="deleteButton">מחק</button>
+                 <button id="closeButton">בטל</button>
+            </div>
+
+            <div id="modalBackDrop"></div>
+
+            <script src={{ url_for('schedulePage.static', filename='/js/schedulePage.js') }} > </script>
+
+  </body>
+</html>

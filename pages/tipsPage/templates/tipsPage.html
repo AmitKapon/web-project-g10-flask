@@ -1,18 +1,131 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('tipsPage.static', filename='/css/tipsPage.css') }}" >
 
-{% set page_head_title = 'About' %}
+    <title>עינת עשהאל-טיפים והמלצות</title>
+</head>
+<body>
+<div class="grid-container" >
 
-{% block page_head_css %}
-    <link rel="stylesheet" href="{{ url_for('about.static', filename='css/about.css') }}"/>
-{% endblock %}
+   <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
 
-{% block page_body_main_content %}
-    <h1>About us</h1>
-    <p>This is an example about us page</p>
-{% endblock %}
+   <!--Click Bar-->
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
 
-{% block page_body_footer %}{% endblock %}
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
 
-{% block page_body_js %}
-    <script src="{{ url_for('about.static', filename='js/about.js') }}"></script>
-{% endblock %}
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
+
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column">  <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column">   <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column">  <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
+                            </div>
+                        </ul>
+                    </div>
+
+
+    <!--Page content-->
+        <div class="page"><br> טיפים והמלצות
+                 <br>
+            <ol style="text-align: center;">
+                <br><br>
+
+            <li> חשוב לאכול כשרעבים ולעצור כששבעים </li>
+                <p>
+                 <br>             כל אחד צריך להיות קשוב לעצמו ולהתייחס למצב בו הוא רעב ולמצב בו הוא שבע.
+כאשר הוא רעב חשוב שיקשיב לעצמו, וידע להבחין למה הוא רעב ולכמה.
+                </p>
+                 <br><br> <br><br>
+
+            <li>הצורך למתוק הוא צורך אמיתי!!!! </li>
+                <p>
+                 <br>הגוף זקוק למתוק. לדוגמא, אחר הצהריים יורד ריכוזו של הורמון הסרוטונין שאחראי על מצב הרוח והמתוק מעלה אותו
+                </p>
+                 <br><br> <br><br>
+
+            <li> פעילות ספורטיבית</li>
+                <p><br>
+עוזרת לתפקוד הלב, עוזרת להזרמה טובה של החמצן בגוף, ומסייעת בבניית רקמת שריר ומבזבז אנרגיה שזה בעצם הקלוריות.
+                </p>
+                 <br><br> <br><br>
+
+            <li> מה שחשוב זה הכמות והאם אני רעב</li>
+                <p><br>
+כל גוף בנוי שונה ולכן לא נכון להקשיב למילים "זה לא בריא" כי זה תלוי בגוף.<br>הרבה פעמים אנשים נמנעים ממאכלים שתורמים כמות גדולה של קלוריות לסל הקלוריות היומי. איך אין זה אומר שאכילה של מאכלים אלו תוביל שמישרין להשמנה.
+                </p>
+                 <br><br> <br><br>
+
+            <li>תספקו לגוף שלכם את מה שהוא מבקש</li>
+                <p><br>
+חשוב לדעת להבין מתי אני רעב ומתי אני שבע – כך נוכל להנות מכל מה שאנחנו אוהבים לאכול וכמה שהגוף שלנו באמת רוצה. <br>בדרך זו אנו חוסכים מהגוף שלנו לייצר חסך ובהמשך סטרס ודחף לאכול את מה שנמנע ממנו.
+                </p>
+                 <br><br> <br><br>
+
+            <li>אל תתבססו על תפריטים</li>
+                <p><br>
+תפריטים מתערבים באופן חיצונים במהלכים ובצרכים של גוף המטופל.<br> התפריטים מקבעים ומגבילים את המטופל באופן אכילתו וכך עלול להתפתח חסך וחשקים עזים וכך דחף שמשבש את התהליכים הטבעיים של הגוף.
+                </p>
+                 <br><br> <br><br>
+
+            <li>כל אחד והגוף שלו</li>
+                <p><br>
+לכל אדם יש את הגוף שלו ומה שבריא לו. תתאימו את התזונה לצרכי הגוף האישי שלכם ולא ל"בריא" הרווח בחברה.
+                </p>
+               <br><br> <br><br>
+
+
+            <li>לא להרעיב את הגוף</li>
+                <p><br>
+חשוב תמיד להרגיש שובע ולא להגיע למצב של רעב.
+                </p>
+                <br><br><br><br>
+
+
+            <b>אז בקיצור- לא לפחד מאוכל! והכי חשוב להקשיב לעצמך! זאת הדרך לחיים מאושרים ונעימים ⊛</b>
+                <br>
+            </ol>
+            <style>
+                .page li{
+                    font-size: 80%;
+                }
+
+                .page p{
+                    font-size: 70%;
+                }
+            </style>
+        </div>
+
+      <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="google"><a href="https://www.google.com/" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+      </div>
+
+</body>
+</html>

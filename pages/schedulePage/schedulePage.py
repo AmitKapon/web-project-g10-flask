@@ -8,3 +8,4 @@ schedulePage = Blueprint('schedulePage', __name__, static_folder='static', stati
 @schedulePage.route('/schedulePage')
 def index():
     return render_template('schedulePage.html')
+
