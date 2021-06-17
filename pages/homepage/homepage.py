@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, redirect, url_for
+from utilities.db.db_manager import dbManager
 
 # homepage blueprint definition
 homePage = Blueprint('homePage', __name__,
@@ -17,3 +18,4 @@ def index():
 @homePage.route('/home')
 def redirect_homepage():
     return redirect(url_for('homePage.index'))
+

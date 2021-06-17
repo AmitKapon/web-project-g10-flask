@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template
+from utilities.db.db_manager import dbManager
 
 # personalStoryPage blueprint definition
 personalStoryPage = Blueprint('personalStoryPage', __name__, static_folder='static',
