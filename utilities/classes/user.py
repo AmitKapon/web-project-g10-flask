@@ -2,14 +2,18 @@ from utilities.db.db_manager import dbManager
 
 
 class User:
-    def __init__(self,  name=None, email=None, phonenumber=None, contentrequest=None):
+    def __init__(self, clientID=None, firstName=None, lastName=None, gender=None, phoneNumber=None, email=None, address=None , password=None):
         self.email = email
-        self.name = name
-        self.phonenumber = phonenumber
-        self.contentrequest = contentrequest
+        self.firstName = firstName
+        self.clientID = clientID
+        self.lastName = lastName
+        self.gender = gender
+        self.phoneNumber = phoneNumber
+        self.address = address
+        self.password = password
 
     def info(self):
         dbManager.commit('''
-        INSERT INTO requestcontacts(name, email, phonenumber, contentrequest)
-        VALUES (%s, %s, %s, %s)
-        ''', ( self.name, self.email, self.phonenumber,
+        INSERT INTO clients(clientID, firstName, lastName, gender, phoneNumber, email, address , password)
+        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+        ''', ( self.clientID, self.email, self.firstName, self.lastName, self.gender, self.phoneNumber, self.address, self.password))
