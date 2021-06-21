@@ -44,63 +44,8 @@
                         </ul>
      </div>
 
-      <div class="buttoncalender" id="header">
-        <div id="monthDisplay"></div>
-        <div>
-          <button id="backButton">הקודם</button>
-          <button id="nextButton">הבא</button>
-        </div>
-      </div>
-
-        <!--Page content-->
-        <div class="page" > קביעת תור
-              <div class="weekdays" id="weekdays" >
-                <div>ראשון</div>
-                <div>שני</div>
-                <div>שלישי</div>
-                <div>רביעי</div>
-                <div>חמישי</div>
-                <div>שישי</div>
-                <div>שבת</div>
-              </div>
-             <div class="calender" id="calendar" ></div>
-        </div>
-
-        <!--contact bar-->
-        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-            <div class="wrapper" style="background-color: #002bff">
-            <ul>
-                <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-                <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
-                <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-        </div>
-</div>
-
-            <div id="newEventModal">
-                  <h2>יצירת תור חדש</h2>
-
-                  <input id="eventTitleInput" placeholder="הכנסת שם מלא" />
-
-                  <button id="saveButton">שמירה</button>
-                  <button id="cancelButton">ביטול</button>
-            </div>
-
-            <div id="deleteEventModal">
-                 <h2>אירוע</h2>
-
-                 <p id="eventText"></p>
-
-                 <button id="deleteButton">מחק</button>
-                 <button id="closeButton">בטל</button>
-            </div>
-
-            <div id="modalBackDrop"></div>
-
-            <script src={{ url_for('schedulePage.static', filename='/js/schedulePage.js') }} > </script>
-
+        {% block calendar %}
+            <h3> Not logged in</h3>
+        {% endblock%}
   </body>
 </html>

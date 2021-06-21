@@ -1,0 +1,165 @@
+{%  extends 'forumPage.html' %}
+
+{% block forum %}
+       <div class="page">
+            <div class="forum">
+            <div class="top-bar">
+                <h1>
+                    פורום שאלות
+                 </h1>
+            </div>
+            <div class="main-forum">
+                <div class="header-forum">
+                </div>
+                <label>כתוב תגובה:</label>
+                <textarea ></textarea><br><br><br>
+                 <label>שם:</label>
+                 <input>
+                <button>הוסף תגובה</button>
+                <div class="comments-forum">
+                </div>
+            </div>
+
+            <script src="script2_data.js"></script>
+            <script>
+                var id = window.location.search.slice(1);
+                var thread = threads.find(t => t.id == id);
+                var header = document.querySelector('.header');
+                var headerHtml = `
+                    <h4 class="title-forum">
+                        ${thread.title}
+                    </h4>
+                <div class="bottom-forum">
+                    <p class="timestamp-forum">
+                        ${new Date(thread.date).toLocaleString()}
+                    </p>
+                    <p class="comment-count">
+                        ${thread.comments.length} comments
+                    </p>
+                </div>
+            </div>
+        `
+            header.insertAdjacentHTML('beforeend', headerHtml)
+
+        function addComment(comment) {
+            var commentHtml = `
+                <div class="comment">
+                    <div class="top-comment">
+                        <p class="user">
+                            ${comment.author}
+                        </p>
+                        <p class="comment-ts">
+                            ${new Date(comment.date).toLocaleString()}
+                        </p>
+                    </div>
+                    <div class="comment-content">
+                        ${comment.content}
+                    </div>
+                </div>
+            `
+                    comments.insertAdjacentHTML('beforeend', commentHtml);
+                }
+
+                var comments = document.querySelector('.comments');
+                for (let comment of thread.comments) {
+                    addComment(comment);
+                }
+
+                var btn = document.querySelector('button');
+                btn.addEventListener('click', function() {
+                    var txt = document.querySelector('textarea');
+                    var comment = {
+                        content: txt.value,
+                        date: Date.now(),
+                        author: 'Aaron'
+                    }
+                    addComment(comment);
+                    txt.value = '';
+                    thread.comments.push(comment);
+                    localStorage.setItem('threads', JSON.stringify(threads));
+                })
+            </script>
+    <style>
+        .forum {
+            margin: 10px 60px;
+            border: white solid;
+
+        }
+        .forum a {
+            text-decoration: none;
+            color: black;
+        }
+        .forum h1{
+            font-size: 80%;
+        }
+        .forum h4, ol {
+            margin: 0;
+        }
+        .forum p {
+            margin: 5px 0;
+        }
+        .forum textarea {
+            width: 50%;
+            height: 40px;
+            font-size: 40%;
+        }
+        .forum button {
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 90%;
+        }
+        .top-bar {
+            background-color: skyblue;
+            padding: 0 40px;
+        }
+        .comments-forum {
+            margin: 40px 0;
+        }
+        .comment {
+            margin: 10px 0;
+        }
+        .row-forum {
+            padding: 5px 0;
+        }
+        .bottom-forum, .top-comment {
+            display: flex;
+            color: grey;
+            font-size: 12px;
+        }
+        .timestamp-forum {
+            padding-right: 10px;
+        }
+        .comment-ts {
+            padding-left: 10px;
+        }
+
+         .main-forum {
+                    font-size: 70%;
+             padding: 10px 40px;
+                }
+
+                .main-forum label{
+		            display: inline-block;
+		            text-align: right;
+		            float: center;
+                }
+
+                .main-forum input{
+                    display: inline-block;
+                    text-align: left;
+                    float: center;
+                }
+                .main-forum textarea{
+                    display: inline-block;
+                    text-align: right;
+                    float: center;
+                    font-size: 50%;
+                }
+                 .main-forum button{
+                    display: inline-block;
+                    float: center;
+                }
+        </style>
+        </div>
+        </div>
+{% endblock %}

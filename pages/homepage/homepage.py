@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, redirect, url_for
 from utilities.db.db_manager import dbManager
+from flask import request, session
 
 # homepage blueprint definition
 homePage = Blueprint('homePage', __name__,
@@ -19,4 +20,10 @@ def index():
 def redirect_homepage():
     return redirect(url_for('homePage.index'))
 
-
+@homePage.route('/logout')
+def logout():
+    session['logged_in'] = False
+    session['email'] = None
+    session['user_password'] = None
+    session['firstName'] = None
+    return redirect(url_for('homePage.index'))
