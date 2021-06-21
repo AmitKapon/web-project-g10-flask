@@ -3,17 +3,17 @@
 {% block singUp %}
 
     <br>
-        <form action="/signedUp">
-                            <input type="text" class="field" name="clientID" required autocomplete="id" placeholder="תעודת זהות (6 ספרות אחרונות)">
+        <form action="/signedUp" METHOD="post">
+                            <input type="number" class="field" name="clientID" required autocomplete="id" placeholder="תעודת זהות (6 ספרות אחרונות)">
                             <input type="text" class="field" name="firstName" required autocomplete="firstname" placeholder="שם פרטי">
                             <input type="text" class="field" name="lastName" required autocomplete="lastname" placeholder="שם משפחה">
                             <input type="text" class="field" name="gender" required autocomplete="gender" placeholder="מין">
                             <input type="text" class="field" name="phoneNumber" required autocomplete="phone" placeholder="טלפון">
                             <input type="text" class="field" name="email" required autocomplete="email" placeholder="כתובת מייל">
                             <input type="text" class="field" name="address" required autocomplete="address" placeholder="כתובת מגורים">
+                            <input type="password" class="field" name="password" required autocomplete="password" placeholder="סיסמה">
+
        				        <button class="btn" type="submit" >הירשם</button>
-
-
         </form>
 
 {% endblock %}

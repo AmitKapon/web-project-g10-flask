@@ -18,23 +18,17 @@ def singUp():
     return render_template('singUp.html')
 
 
-@loginPage.route('/singedUp')
+@loginPage.route('/signedUp', methods=['GET', 'POST'])
 def signedUp():
   if request.method == 'POST':
             user = User()
             user.clientID = request.form['clientID']
             user.firstName = request.form['firstName']
             user.lastName = request.form['lastName']
-            user.phonenumber = request.form['phonenumber']
-            user.contentrequest = request.form['contentrequest']
+            user.gender = request.form['gender']
+            user.phoneNumber = request.form['phoneNumber']
+            user.email = request.form['email']
+            user.address = request.form['address']
+            user.password = request.form['password']
             user.info()
-        return redirect('/contactPage')
-
-self.email = email
-        self.firstName = firstName
-        self.clientID = clientID
-        self.lastName = lastName
-        self.gender = gender
-        self.phoneNumber = phoneNumber
-        self.address = address
-        self.password = password
+  return redirect('/loginPage')
