@@ -132,9 +132,9 @@ function change1() {
         }
     }
 
-    function change7() {
-    var btn = document.getElementById("myButton7");
-    var txt = document.getElementById("p7");
+    function change7(stingLong, stringShort, number) {
+    var btn = document.getElementById("myButton"+number);
+    var txt = document.getElementById("p"+ number);
     if (btn.value == 'Read More') {
         btn.value = 'Read Less';
 
