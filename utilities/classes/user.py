@@ -16,4 +16,4 @@ class User:
         dbManager.commit('''
         INSERT INTO clients(clientID, firstName, lastName, gender, phoneNumber, email, address , password)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
-        ''', ( self.clientID, self.email, self.firstName, self.lastName, self.gender, self.phoneNumber, self.address, self.password))
+        ''', ( self.clientID, self.firstName, self.lastName, self.gender, self.phoneNumber, self.email, self.address, self.password))
