@@ -19,3 +19,4 @@ def index():
 def redirect_homepage():
     return redirect(url_for('homePage.index'))
 
+

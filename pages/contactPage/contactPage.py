@@ -24,4 +24,5 @@ def main_func():
         ct.phonenumber = request.form['phonenumber']
         ct.contentrequest = request.form['contentrequest']
         ct.info()
+
     return redirect('/contactPage')

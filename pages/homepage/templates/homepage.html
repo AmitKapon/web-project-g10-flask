@@ -48,6 +48,15 @@
                             <div class ="button">
                             <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
                             </div>
+                            <div>
+
+
+                            {% if session['logged_in']%}
+                                <h1> Hello {{ session['firstName'] }}!</h1>
+                            {% else %}
+                                <h1> Not connected!</h1>
+                            {% endif %}
+                            </div>
                         </ul>
                     </div>
 

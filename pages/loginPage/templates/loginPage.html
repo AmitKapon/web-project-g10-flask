@@ -44,14 +44,18 @@
                     </div>
 
    <!--Page content-->
+                {% for message in get_flashed_messages() %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
         <div class="page"><br> התחברות
                 <div class="login-box"><br>
-                    <form action="/requestLogin"> </form>
+                    <form action="/signIn" method="POST">
 
-			            <input type="text" class="field" required autocomplete="name" placeholder="שם משתמש">
-				        <input type="password" class="field" placeholder="סיסמא" required autocomplete="password">
+			            <input type="text" class="field" name ="email" required autocomplete="name" placeholder="שם משתמש">
+				        <input type="password" class="field" name="password" placeholder="סיסמא" required autocomplete="password">
 
 				        <button class="btn" type="submit" onclick="window.location.href='7_myAreaPage.html'">התחבר</button>
+                     </form>
                   <form action="/singUp">
                       <button class="btn" onclick="window.location.href='7.2_SignUpPage.html'">הירשם עכשיו!</button>
                   </form>

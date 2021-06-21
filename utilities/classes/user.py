@@ -1,4 +1,6 @@
 from utilities.db.db_manager import dbManager
+from flask import Flask, redirect,  flash
+from flask import request, session
 
 
 class User:
@@ -17,3 +19,13 @@ class User:
         INSERT INTO clients(clientID, firstName, lastName, gender, phoneNumber, email, address , password)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
         ''', ( self.clientID, self.firstName, self.lastName, self.gender, self.phoneNumber, self.email, self.address, self.password))
+
+    def Check(myEmail):
+        query = "SELECT * FROM clients where email = '%s';" % myEmail
+        query_result = dbManager.fetch(query)
+
+        return query_result
+
+            # query_result = dbManager.fetch(query)
+            # flash(query_result)
+            # return query_result
