@@ -11,3 +11,23 @@ personalStoryPage = Blueprint('personalStoryPage', __name__, static_folder='stat
 @personalStoryPage.route('/personalStoryPage')
 def index():
     return render_template('personalStoryPage.html')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
