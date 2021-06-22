@@ -1,0 +1,44 @@
+{% extends 'homepage.html' %}
+
+{% block details %}
+
+
+ <div>
+<ul>
+    <li> your Id : {{ user[0][0] }}</li>
+    <li> your first Name : {{ user[0][1] }}</li>
+    <li> your last Name : {{ user[0][2] }}</li>
+     <li> your gender : {{ user[0][3] }}</li>
+    <li> your phone number: {{ user[0][4] }}</li>
+    <li> your email: {{ user[0][5] }}</li>
+    <li> your city: {{ user[0][6] }}</li>
+    <li> your password: {{ user[0][7] }}</li>
+    </ul>
+</div>
+
+     <form action="/updateDetails" METHOD="POST">
+                            <input type="number" class="field" name="clientID"  autocomplete="id" placeholder="תעודת זהות (6 ספרות אחרונות)">
+                            <input type="text" class="field" name="firstName"  autocomplete="firstname" placeholder="שם פרטי">
+                            <input type="text" class="field" name="lastName"  autocomplete="lastname" placeholder="שם משפחה">
+                            <input type="text" class="field" name="gender"  autocomplete="gender" placeholder="מין">
+                            <input type="text" class="field" name="phoneNumber"  autocomplete="phone" placeholder="טלפון">
+                            <input type="text" class="field" name="email"  autocomplete="email" placeholder="כתובת מייל">
+                            <input type="text" class="field" name="address"  autocomplete="address" placeholder="כתובת מגורים">
+                            <input type="password" class="field" name="password"  autocomplete="password" placeholder="סיסמה">
+
+       				        <button class="btn" type="submit" >עדכן פרטים</button>
+        </form>
+
+
+
+{% for message in get_flashed_messages() %}
+                    <p>{{ message }}</p>
+{% endfor %}
+
+
+
+
+
+
+
+{% endblock %}

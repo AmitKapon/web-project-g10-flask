@@ -26,6 +26,10 @@ class User:
 
         return query_result
 
-            # query_result = dbManager.fetch(query)
-            # flash(query_result)
-            # return query_result
+    def update(self):
+        query = "SELECT * FROM clients where clientID = '%s';" % self.clientID
+        query_result = dbManager.fetch(query)
+        if query_result:
+            dbManager.commit("UPDATE clients SET clientID=%s, firstName=%s, lastName=%s, gender=%s, phoneNumber=%s, email=%s, address=%s, password=%s  where clientID=%s", (self.clientID, self.firstName, self.lastName, self.gender, self.phoneNumber, self.email, self.address, self.password, self.clientID))
+
+

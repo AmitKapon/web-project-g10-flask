@@ -56,7 +56,7 @@ font-size: 100%;
 
 .button{
     grid-area: butt;
-    font-size: 40px;
+    font-size: 16px;
     align-self: center;
 }
 
