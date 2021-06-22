@@ -1,62 +1,76 @@
+
 {% extends 'schedulePage.html' %}
 
 {% block calendar %}
-     <div class="buttoncalender" id="header">
-        <div id="monthDisplay"></div>
-        <div>
-          <button id="backButton">הקודם</button>
-          <button id="nextButton">הבא</button>
-        </div>
-      </div>
+
 
         <!--Page content-->
-        <div class="page" > קביעת תור
-              <div class="weekdays" id="weekdays" >
-                <div>ראשון</div>
-                <div>שני</div>
-                <div>שלישי</div>
-                <div>רביעי</div>
-                <div>חמישי</div>
-                <div>שישי</div>
-                <div>שבת</div>
-              </div>
-             <div class="calender" id="calendar" ></div>
-        </div>
+<form action="/chooseDate" method="post">
+
+<h1>בחר תאריך</h1>
+    <select name="chooseYear">
+    <option value="1">2021</option>
+    <option value="2">2022</option>
+    <option value="3">2023</option>
+</select>
+
+<select name="chooseMonth">
+    <option value="1">ינואר</option>
+    <option value="2">פברואר</option>
+    <option value="3">מרץ</option>
+    <option value="4">אפריל</option>
+    <option value="5">מאי</option>
+    <option value="6">יוני</option>
+    <option value="7">יולי</option>
+    <option value="8">אוגוסט</option>
+    <option value="9">ספטמבר</option>
+    <option value="10">אוקטובר</option>
+    <option value="11">נובמבר</option>
+    <option value="12">דצמבר</option>
+</select>
+
+<select name="chooseDay">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+    <option value="11">11</option>
+    <option value="12">12</option>
+    <option value="1">13</option>
+    <option value="2">14</option>
+    <option value="3">15</option>
+    <option value="4">16</option>
+    <option value="5">17</option>
+    <option value="6">18</option>
+    <option value="7">19</option>
+    <option value="8">20</option>
+    <option value="9">21</option>
+    <option value="10">22</option>
+    <option value="11">23</option>
+    <option value="12">24</option>
+    <option value="1">25</option>
+    <option value="2">26</option>
+    <option value="3">27</option>
+    <option value="4">28</option>
+    <option value="5">29</option>
+    <option value="6">30</option>
+    <option value="7">31</option>
+    </select>
+
+    <button class="btn" type="submit" >"> בדוק זמינות </button>
+
+</form>
 
         <!--contact bar-->
-        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
-            <div class="wrapper" style="background-color: #002bff">
-            <ul>
-                <li class="facebook"><a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
-                <li class="twitter"><a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
-                <li class="instagram"><a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
-                <li class="google"><a href="#"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
-                <li class="whatsapp"><a href="#"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
-              </ul>
-            </div>
-        </div>
-</div>
 
-            <div id="newEventModal">
-                  <h2>יצירת תור חדש</h2>
-                    <form action="/bookMeeting", method="POST">
-                  <input id="eventTitleInput" placeholder="הכנסת שם מלא" />
-                  <button id="saveButton" type="submit">שמירה</button>
-                  <button id="cancelButton">ביטול</button>
-                        </form>
-            </div>
 
-            <div id="deleteEventModal">
-                 <h2>אירוע</h2>
 
-                 <p id="eventText"></p>
 
-                 <button id="deleteButton">מחק</button>
-                 <button id="closeButton">בטל</button>
-            </div>
-
-            <div id="modalBackDrop"></div>
-
-            <script src={{ url_for('schedulePage.static', filename='/js/schedulePage.js') }} > </script>
 
 {% endblock %}
