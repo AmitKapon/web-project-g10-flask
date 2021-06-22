@@ -16,6 +16,6 @@ create table forummessags
 create index responseID_idx
     on forummessags (responesClientID, responesDT);
 
-INSERT INTO `web-project-g10`.forummessags (clientIDforum, messageDT, title, content, responesClientID, responesDT) VALUES (483027, '2021-06-10 15:35:33', 'question', 'is Einat''s method works?
+INSERT INTO `web-project-g10`.forum_messags (clientIDforum, messageDT, title, content, responesClientID, responesDT) VALUES (483027, '2021-06-10 15:35:33', 'question', 'is Einat''s method works?
 ', null, null);
-INSERT INTO `web-project-g10`.forummessags (clientIDforum, messageDT, title, content, responesClientID, responesDT) VALUES (513361, '2021-06-17 16:06:45', 'answer', 'absulotely!!!! she changed my life!', 483027, '2021-06-10 15:35:33');
+INSERT INTO `web-project-g10`.forum_messags (clientIDforum, messageDT, title, content, responesClientID, responesDT) VALUES (513361, '2021-06-17 16:06:45', 'answer', 'absulotely!!!! she changed my life!', 483027, '2021-06-10 15:35:33');

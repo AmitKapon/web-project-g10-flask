@@ -4,12 +4,47 @@
 
 <div class="page"><br> פורום שאלות
                 <div class="contact-box">
-                    <form action="/request" method="post">
+                    <form method="POST" , action="/insert_forum">
 				        <input type="topic" class="field" id="topic" name="topic" placeholder="נושא חדש" required autocomplete="topic">
 				        <textarea placeholder="תוכן התגובה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
 				        <button class="btn" type="submit" name="submit" >שליחה</button>
 			        </form>
                 </div>
+
+
+    {% if fullForum %}
+    <h1>List of messages:</h1>
+    <ul>
+    {% for forumMessage in fullForum %}
+{#       {% if (forumMessage.posted==False)   %}#}
+         <li>User ID: {{ forumMessage.clientIDforum }} | Message Date: {{ forumMessage.messageDT }} <br> Content: {{ forumMessage.content }}<br>
+             </li>  <br>
+           {% if fullresponses %}
+                {% for forumMessage1 in fullresponses %}
+                    {% if (forumMessage1.responseClientID == forumMessage.clientIDforum) %}
+                        <li> User ID: {{ forumMessage1.clientIDforum }} | Message Date: {{ forumMessage1.messageDT }} <br> Content: {{ forumMessage1.content }}<br>
+                        </li>  <br>
+                    {% endif %}
+                {% endfor %}
+           {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    </ul>
+  <br>
+{#
+  <form method=post action="do_addtopic.php">
+  <p><strong>Your E-Mail Address:</strong><br>
+ <input type="text" name="topic_owner" size=40 maxlength=150>
+ <p><strong>Topic Title:</strong><br>
+  <input type="text" name="topic_title" size=40 maxlength=150>
+ <P><strong>Post Text:</strong><br>
+ <textarea name="post_text" rows=8 cols=40 wrap=virtual></textarea>
+ <P><input type="submit" name="submit" value="Add Topic"></p>
+    </form>
+#}
+
+
            </div>
 
 {% endblock %}

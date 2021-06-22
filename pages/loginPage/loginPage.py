@@ -53,6 +53,7 @@ def main_func_sin():
                 session['email'] = email
                 session['user_password'] = password
                 session['firstName']= answer[0][1]
+                session['userID'] = answer[0][0]
                 flash('You are in!')
                 flash(session['firstName'])
                 us=User()

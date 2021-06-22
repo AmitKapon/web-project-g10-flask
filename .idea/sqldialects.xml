@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/utilities/db/forum.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/utilities/db/web_project_g10_availablemeetings_1.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/utilities/db/web_project_g10_forummessags_1.sql" dialect="MySQL" />
     <file url="file://$PROJECT_DIR$/utilities/db/web_project_g10_futuremeetings_1.sql" dialect="MySQL" />
