@@ -40,6 +40,21 @@ def insert_forum_message():
         return redirect('/forumDisplay')
     return redirect('/forumDisplay')
 
+@forumPage.route('/insert_comment', methods=['GET', 'POST'])
+def insert_comment():
+    if request.method == 'POST':
+        getComment = request.form.get('getComment')
+        contentrequest = request.form['contentrequest']
+
+
+        return redirect('/forumDisplay')
+    return redirect('/forumDisplay')
+
+@forumPage.route('/goToComment', methods=['GET', 'POST'])
+def goToComment():
+         x=Forum()
+         topicList = Forum.getTopic(x)
+         return render_template('comment.html',topicList=topicList)
 
 @forumPage.route('/delete_user', methods=['GET', 'POST'])
 def delete_user():

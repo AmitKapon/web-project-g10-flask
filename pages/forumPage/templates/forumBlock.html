@@ -7,9 +7,12 @@
                     <form method="POST" , action="/insert_forum">
 				        <input type="text" class="field" id="topic" name="topic" placeholder="נושא חדש" required autocomplete="topic">
 				        <textarea placeholder="תוכן התגובה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
-                        <input type="text" class="field" id="comment" name="comment" placeholder="תגובה להודעה מספר? (השאר ריק לנושא חדש) " required autocomplete="topic">
 				        <button class="btn" type="submit" name="submit" >שליחה</button>
 			        </form>
+                    <form action="/goToComment" method="post">
+                    <button class="btn" type="submit" name="submit" >הוסף תגובה לנושא קיים</button>
+
+                    </form>
                 </div>
 
 

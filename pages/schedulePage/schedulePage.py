@@ -18,20 +18,19 @@ def index():
 
 @schedulePage.route('/displayCalendar')
 def calendar():
-
-    return render_template('calendarBlock.html')
-
+    x=Meeting()
+    answer = Meeting.checkDate(x)
+    return render_template('calendarBlock.html',answer=answer)
 
 
 @schedulePage.route('/chooseDate', methods=['GET', 'POST'])
 def chooseDate():
     if request.method == 'POST':
-            chooseYear = request.form['chooseYear']
-            chooseMonth = request.form['chooseMonth']
-            chooseDay = request.form['chooseDay']
-            answer = Meeting.checkDate(chooseYear,chooseMonth,chooseDay)
-     if(answer != None)
-
-
-
-    return render_template('calendarBlock.html')
+            chosenDate = request.form.get('getMonth')
+            myDate = Meeting()
+            happend = Meeting.insertMeeting(chosenDate)
+            # if(answer != None):
+            #      flash(answer)
+            # else:
+            #     flash("nothing found")
+    return render_template('calendarBlock.html' , check=chosenDate)

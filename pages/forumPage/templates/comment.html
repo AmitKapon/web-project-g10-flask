@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('forumPage.static', filename='/css/forumPage.css') }}" >
+    <title>עינת עשהאל- פורום</title>
+</head>
+<body>
+<div class="grid-container" >
+
+    <!--Header & Logo-->
+    <div class="header"  >
+        <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+    </div>
+
+   <!--Click Bar-->
+    <div class="headerMenu" >
+                        <ul class = "Navbar" >
+
+                            <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
+
+                            <div class="column"><li><a href='/aboutPage' width="16.6%" style="width:100%">אודות</a> </li> </div>
+
+                            <div class="column"> <li><a href='/approachPage' width="16.6%" style="width:100%">גישת הטיפול</a></li> </div>
+
+                            <div class="column"><li><a href='/tipsPage' width="16.6%" style="width:100%"> טיפים והמלצות</a></li></div>
+
+                            <div class="column"> <li><a href='/personalStoryPage'  width="16.6%" style="width:100%">סיפורי הצלחה</a></li></div>
+
+                            <div class="column"> <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
+{#
+                            <div class="column"> <li><a href='/forumPage' width="16.6%" style="width:100%">איזור אישי</a></li> </div>
+#}
+                            <div class="column"> <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
+
+                            <div class ="button">
+                            <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right">קביעת תור</button>
+                            </div>
+                        </ul>
+                    </div>
+
+    <!--Page content-->
+<div class="page"><br>
+    <div class="contact-box">
+                    <form method="POST" , action="/insert_comment">
+
+                        <select name="getComment">
+                                {% for topic in topicList %}
+                                    <option name="chosenTopic" value="{{ topic.title}}">
+                                     {{ topic.title }}
+                                    </option>
+                                {% endfor %}
+                           </select>
+                    <br>
+				        <textarea placeholder="תוכן התגובה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
+				        <button class="btn" type="submit" name="submit" >שליחה</button>
+			        </form>
+                </div>
+</div>
+       <!--contact bar-->
+        <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+            <div class="wrapper" style="background-color: #002bff">
+                <ul>
+                    <li class="facebook"><a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="twitter"><a href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="instagram"><a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="google"><a href="https://www.google.com/" target="_blank"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a></li>
+                    <li class="whatsapp"><a href="https://www.whatsapp.com/" target="_blank"><i class="fa fa-whatsapp fa-2x" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+   </div>
+
+
+</body>
+</html>

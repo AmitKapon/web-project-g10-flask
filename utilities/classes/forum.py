@@ -21,7 +21,11 @@ class Forum:
      values (%s,%s,%s,%s)''',(session['userID'], forumDate.strftime("%Y-%m-%d %H:%M:%S") , title, content)
     )
 
-
+    def getTopic(self):
+        query = "SELECT title FROM forum_messags where responesClientID is NULL "
+        # and availableDT.Month() = '%s' and availableDT.Day() = '%s'
+        query_result = dbManager.fetch(query)
+        return query_result
 
     def getForum(self):
         query = "SELECT * FROM forum_messags;"
