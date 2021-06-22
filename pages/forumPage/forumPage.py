@@ -3,6 +3,7 @@ from utilities.db.db_manager import dbManager
 from flask import Flask, redirect,  flash
 from flask import request, session
 from utilities.classes.forum import Forum
+from datetime import datetime
 
 
 # forumPage blueprint definition
@@ -45,8 +46,15 @@ def insert_comment():
     if request.method == 'POST':
         getComment = request.form.get('getComment')
         contentrequest = request.form['contentrequest']
-
-
+        origin=Forum.searchTopic(getComment)
+        comment= Forum()
+        comment.title= 'reply to ' + getComment
+        comment.clientIDforum = session['userID']
+        comment.content= contentrequest
+        comment.responseClientID = origin[0][0]
+        comment.messageDT = datetime.now()
+        comment.responseDT = origin[0][1]
+        Forum.insertComment(comment)
         return redirect('/forumDisplay')
     return redirect('/forumDisplay')
 
