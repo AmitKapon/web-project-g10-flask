@@ -43,7 +43,8 @@
     <!--Page content-->
     {% block forum %}
 
-{% endblock %}
+    {% endblock %}
+
        <!--contact bar-->
         <div class="contact"> <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
             <div class="wrapper" style="background-color: #002bff">
@@ -56,79 +57,8 @@
                 </ul>
             </div>
         </div>
-
    </div>
 
-</body>
-<body class="forums">
-    <div class="top-bar">
-        <h1>
-            פורום שאלות
-        </h1>
-    </div>
-    <div class="mainForum">
-        <ol>
-        </ol>
-    </div>
-    <script src="script2_data.js"></script>
-    <script>
-        console.log(threads);
-        var container = document.querySelector('ol');
-        for (let thread of threads) {
-            var html = `
-            <li class="row">
-                <a href="6_forumPage.html?${thread.id}">
-                    <h4 class="title">
-                        ${thread.title}
-                    </h4>
-                    <div class="bottom">
-                        <p class="timestamp">
-                            ${new Date(thread.date).toLocaleString()}
-                        </p>
-                        <p class="comment-count">
-                            ${thread.comments.length} comments
-                        </p>
-                    </div>
-                </a>
-            </li>
-            `
-            container.insertAdjacentHTML('beforeend', html);
-        }
-    </script>
-    <style>
-        .forums body {
-            margin: 10px 60px;
-        }
-        .forums a {
-            text-decoration: none;
-            color: black;
-        }
-        .forums h1, h4, ol {
-            /*background: skyblue;*/
-            margin: 0;
-        }
-        .forums p {
-            margin: 5px 0;
-        }
-        .forums .top-bar {
-            background-color: skyblue;
-            padding: 0 40px;
-        }
-        .forums .main {
-            background-color: #F6F6EF;
-            padding: 10px 15px;
-        }
-        .forums .row {
-            padding: 5px 0;
-        }
-        .forums .bottom {
-            display: flex;
-            color: grey;
-            font-size: 12px;
-        }
-        .forums .timestamp {
-            padding-right: 10px;
-        }
-    </style>
+
 </body>
 </html>

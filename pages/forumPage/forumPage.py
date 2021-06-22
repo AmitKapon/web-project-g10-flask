@@ -20,4 +20,3 @@ def showForum():
     return render_template('forumBlock.html')
 
 
-
