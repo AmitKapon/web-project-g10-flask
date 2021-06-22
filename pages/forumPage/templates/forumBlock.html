@@ -5,8 +5,9 @@
 <div class="page"><br> פורום שאלות
                 <div class="contact-box">
                     <form method="POST" , action="/insert_forum">
-				        <input type="topic" class="field" id="topic" name="topic" placeholder="נושא חדש" required autocomplete="topic">
+				        <input type="text" class="field" id="topic" name="topic" placeholder="נושא חדש" required autocomplete="topic">
 				        <textarea placeholder="תוכן התגובה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
+                        <input type="text" class="field" id="comment" name="comment" placeholder="תגובה להודעה מספר? (השאר ריק לנושא חדש) " required autocomplete="topic">
 				        <button class="btn" type="submit" name="submit" >שליחה</button>
 			        </form>
                 </div>
@@ -16,17 +17,21 @@
     <h1>List of messages:</h1>
     <ul>
     {% for forumMessage in fullForum %}
-{#       {% if (forumMessage.posted==False)   %}#}
-         <li>User ID: {{ forumMessage.clientIDforum }} | Message Date: {{ forumMessage.messageDT }} <br> Content: {{ forumMessage.content }}<br>
-             </li>  <br>
-           {% if fullresponses %}
+       {% if forumMessage.responesClientID == None %}
+             <li>User ID: {{ forumMessage.clientIDforum }} | Message Date: {{ forumMessage.messageDT }} <br> Content: {{ forumMessage.content }}<br>
+             </li>
+           <input>
+{#           {% if fullresponses %}#}
                 {% for forumMessage1 in fullresponses %}
-                    {% if (forumMessage1.responseClientID == forumMessage.clientIDforum) %}
-                        <li> User ID: {{ forumMessage1.clientIDforum }} | Message Date: {{ forumMessage1.messageDT }} <br> Content: {{ forumMessage1.content }}<br>
-                        </li>  <br>
+                    {% if forumMessage1.responesClientID == forumMessage.clientIDforum %}
+                        <li> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; User ID: {{ forumMessage1.clientIDforum }} | Message Date: {{ forumMessage1.messageDT }} <br>
+                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Content: {{ forumMessage1.content }} <br>
+                        </li>
+                        <br>
+
                     {% endif %}
                 {% endfor %}
-           {% endif %}
+       {% endif %}
     {% endfor %}
     {% endif %}
 

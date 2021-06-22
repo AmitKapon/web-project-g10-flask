@@ -1,0 +1,15 @@
+create table `web-project-g10`.`forum_topics` (
+topic_id int not null primary key auto_increment,
+ topic_title varchar (150),
+ topic_create_time datetime,
+ topic_owner varchar (150)
+ );
+
+
+ create table `web-project-g10`.`forum_posts` (
+ post_id int not null primary key auto_increment,
+ topic_id int not null,
+ post_text text,
+ post_create_time datetime,
+ post_owner varchar (150)
+ );
