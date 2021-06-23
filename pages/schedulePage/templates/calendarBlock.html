@@ -12,7 +12,7 @@
 <form action="/chooseDate" method="post">
 
 <h1>בחר תאריך</h1>
-
+<br>
    <select name="getMonth">
         {% for option in answer %}
             <option name="chosenDate" value="{{ option.availableDT.year }}-{{ option.availableDT.month }}-{{ option.availableDT.day }} {{ option.availableDT.hour }}:{{ option.availableDT.minute }}:{{ option.availableDT.second }}">
@@ -23,6 +23,7 @@
 
 
     <button class="btn" type="submit" > בדוק זמינות </button>
+
 
 </form>
 

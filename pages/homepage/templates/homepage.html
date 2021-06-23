@@ -13,7 +13,7 @@
 
     <script src={{ url_for('homePage.static', filename='/js/homePage.js') }} ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="../../../PartB/js/script1_main.js?v3" type="text/javascript"></script>
+    <script src={{ url_for('homePage.static', filename='js/homepage.js')}} type="text/javascript"></script>
 
 </head>
 <!-- Currenr month and year on-load-->
@@ -23,11 +23,29 @@
     <!--Header & Logo-->
     <div class="header"  >
         <h1 style="font-size:100%; color: #dd6c9f"><img src="{{ url_for('homePage.static', filename='/media/piclogo.png') }}" alt="Logo Picture" width="5%"> עינת עשהאל - דיאטנית קלינית &#9</h1>
+
     </div>
+
 
    <!--Click Bar-->
     <div class="headerMenu" >
                         <ul class = "Navbar" >
+                         <div class="column" style="font-size: medium">
+                             {% if session['logged_in']%}
+                                <h1 style=" text-align: center"> שלום, {{ session['firstName'] }}  </h1>
+                                <form action="/logout">
+                                   <button type="submit" style=" width:100%; background-color: #c4243c;">התנתק</button>
+                                </form>
+                                <form action="/detailPage" method="post">
+                                   <button type="submit" style=" width:100%; background-color: #39c66c;">פרטיים אישיים</button>
+                                </form>
+                              {% else %}
+                                    <h2> ברוכים הבאים, אורח!</h2>
+                                <form action="/loginPage" >
+                                   <button type="submit" style=" width:100%; background-color: #dd6c9f;">כניסה</button>
+                                </form>
+                              {% endif %}
+                        </div>
 
                             <div class="column"><li><a href='/' width="16.6%" style="width:100%">ראשי</a> </li> </div>
 
@@ -41,37 +59,21 @@
 
                             <div class="column"> <li><a href='/forumPage' width="16.6%" style="width:100%">פורום</a></li>  </div>
 
-                            <div class="column"> <li><a href='/loginPage' width="16.6%" style="width:100%">כניסה</a></li> </div>
-
                             <div class="column"> <li><a href='/contactPage' width="16.6%" style="width:100%">יצירת קשר</a></li> </div>
 
                             <div class ="button">
                             <button class="glow-on-hover" type="button" onclick="window.location.href='/schedulePage';" style="float: right ">קביעת תור</button>
                             </div>
 
-                            <div>
 
 
-                            {% if session['logged_in']%}
-                                <h1> Hello {{ session['firstName'] }}!</h1>
-                                <form action="/logout">
-                                <button class="btn" type="submit" >התנתק</button>
 
-                                </form>
-                                <form action="/detailPage" method="post">
-
-                                <button  type="submit" >פרטים אישיים</button>
-
-
-                                </form>
-                            {% else %}
-                                <h1> Not connected!</h1>
-                            {% endif %}
-                            </div>
                         </ul>
                     </div>
 
 {% block details %}
+
+
 
         <div class="image"><br>
         <img src="{{ url_for('homePage.static', filename='/media/picEinat.jpg') }}" alt="PictureEinat" width="100%">
