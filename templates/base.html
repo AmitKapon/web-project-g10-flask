@@ -1,11 +1,11 @@
-{#
+
 Base page variables:
 -- page_lang | default: 'en'
 -- page_head_title_author | default: 'Barak Pinchovski'
 -- page_head_title | default: 'Flask skeleton project'
-#}
 
-{#
+
+
 Base page blocks:
 - head
 -- page_head
@@ -25,15 +25,15 @@ Base page blocks:
 --- page_body_footer
 ---- page_body_footer_content
 -- page_body_js
- #}
+
 <!DOCTYPE html>
  <html lang="{{ page_lang|default("en", true) }}">
     <head>
     {% block page_head %}
-        {# Title #}
+         Title
         <title>{{ page_head_title_author|default('Barak Pinchovski', true) }} | {{ page_head_title|default('Flask skeleton project', true) }}</title>
 
-        {# Meta tags #}
+         Meta tags
         {% block page_head_meta %}
             <base href="/"/>
             <meta charset="UTF-8"/>
@@ -43,13 +43,13 @@ Base page blocks:
             {% block page_head_meta_extra %}{% endblock %}
         {% endblock %}
 
-        {# favicon #}
+         favicon
         <link rel="icon" href="{{ url_for('static', filename='media/img/favicon/flask-favicon.png') }}"/>
 
-        {# Base #}
+         Base
         <base href="/"/>
 
-        {# CSS #}
+         CSS
         <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}"/>
         {% block page_head_css %}{% endblock %}
     {% endblock %}
@@ -57,12 +57,12 @@ Base page blocks:
     <body>
         {% block page_body_content %}
 
-            {# Header #}
+             Header
             {% block page_body_header %}
                 <header class="page-header">
                     {% block page_body_header_content %}
 
-                        {# Main Menu #}
+                         Main Menu
                         {% block page_body_header_content__main_menu %}
                             <nav class="main-menu">
                                 {% block page_body_header_content__main_menu_content %}
@@ -79,7 +79,7 @@ Base page blocks:
                 </header>
             {% endblock %}
 
-            {# Main #}
+             Main
             {% block page_body_main %}
                 <main class="page-main">
                   {% block page_body_main_content %}
@@ -87,7 +87,7 @@ Base page blocks:
                 </main>
             {% endblock %}
 
-            {# Footer #}
+             Footer
             {% block page_body_footer %}
                 <footer class="page-footer">
                   {% block page_body_footer_content %}
@@ -97,8 +97,9 @@ Base page blocks:
 
         {% endblock %}
 
-        {# JS #}
+         JS
         <script src="{{ url_for('static', filename='js/base.js') }}"></script>
         {% block page_body_js %}{% endblock %}
     </body>
 </html>
+

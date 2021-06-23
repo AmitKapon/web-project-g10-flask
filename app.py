@@ -38,10 +38,6 @@ app.register_blueprint(personalStoryPage)
 from pages.schedulePage.schedulePage import schedulePage
 app.register_blueprint(schedulePage)
 
-## sign Up Page
-from pages.signUpPage.signUpPage import signUpPage
-app.register_blueprint(signUpPage)
-
 ## tips Page
 from pages.tipsPage.tipsPage import tipsPage
 app.register_blueprint(tipsPage)

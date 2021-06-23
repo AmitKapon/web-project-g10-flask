@@ -104,7 +104,9 @@ font-size: 100%;
 
 .contact{
     grid-area: con1;
+    /*
     border: white solid;
+    */
     text-align: center;
     margin: auto;
 }

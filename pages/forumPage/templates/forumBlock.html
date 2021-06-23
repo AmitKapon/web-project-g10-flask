@@ -25,15 +25,15 @@
                        <br>
 
 
-                       <li style=" width:100%; background-color: #c40259; color: antiquewhite; text-align: right" " > נושא: {{ forumMessage.title }} </li>
+                       <li style=" width:100%; background-color: #c40259; color: antiquewhite; text-align: right" > נושא: {{ forumMessage.title }} </li>
                        <li style=" width:100%; background-color: #db5793; color: antiquewhite; text-align: right" > משתמש: {{ forumMessage.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}    </li>
                        <li style=" width:100%; background-color: #cb8faa; color: black; text-align: right"> {{ forumMessage.content }}<br>    </li>
 
 
                             {% for forumMessage1 in fullresponses %}
                                 {% if forumMessage1.responesClientID == forumMessage.clientIDforum %}
-                                      <li style=" width:100%; background-color: #c40259; color: antiquewhite; text-align: left"> משתמש: {{ forumMessage1.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}
-                                         <li style=" width:100%; background-color: #db5793; color: black; text-align: left "> {{ forumMessage1.content }}<br>
+                                      <li style=" width:100%; background-color: #db5793; color: antiquewhite; text-align: left"> משתמש: {{ forumMessage1.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}
+                                         <li style=" width:100%; background-color: #cb8faa; color: black; text-align: left "> {{ forumMessage1.content }}<br>
                                     </li>
 
                          </div>
