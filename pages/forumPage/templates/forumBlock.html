@@ -2,7 +2,7 @@
 
 {% block forum %}
 
-<div class="page"><br> פורום שאלות
+        <div class="page"><br> פורום שאלות
                 <div class="contact-box">
                     <form method="POST" , action="/insert_forum">
 				        <input type="text" class="field" id="topic" name="topic" placeholder="נושא חדש" required autocomplete="topic">
@@ -15,31 +15,35 @@
                     </form>
                 </div>
 
+                {% if fullForum %}
+                    <br>
+                <h1 style=" width:100%; color: #550501; " >רשימת נושאים</h1>
+                <ul>
+                {% for forumMessage in fullForum %}
+                    <div>
+                   {% if forumMessage.responesClientID == None %}
+                       <br>
 
-    {% if fullForum %}
-    <h1>List of messages:</h1>
-    <ul>
-    {% for forumMessage in fullForum %}
-        <div>
-       {% if forumMessage.responesClientID == None %}
-             <li>User ID: {{ forumMessage.clientIDforum }} | Message Date: {{ forumMessage.messageDT }} <br> Content: {{ forumMessage.content }}<br>
-             </li>
+
+                       <li style=" width:100%; background-color: #c40259; color: antiquewhite; text-align: right" " > נושא: {{ forumMessage.title }} </li>
+                       <li style=" width:100%; background-color: #db5793; color: antiquewhite; text-align: right" > משתמש: {{ forumMessage.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}    </li>
+                       <li style=" width:100%; background-color: #cb8faa; color: black; text-align: right"> {{ forumMessage.content }}<br>    </li>
 
 
-                {% for forumMessage1 in fullresponses %}
-                    {% if forumMessage1.responesClientID == forumMessage.clientIDforum %}
-                        <li> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; User ID: {{ forumMessage1.clientIDforum }} | Message Date: {{ forumMessage1.messageDT }} <br>
-                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Content: {{ forumMessage1.content }} <br>
-                        </li>
-                        <br>
-             </div>
-                    {% endif %}
+                            {% for forumMessage1 in fullresponses %}
+                                {% if forumMessage1.responesClientID == forumMessage.clientIDforum %}
+                                      <li style=" width:100%; background-color: #c40259; color: antiquewhite; text-align: left"> משתמש: {{ forumMessage1.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}
+                                         <li style=" width:100%; background-color: #db5793; color: black; text-align: left "> {{ forumMessage1.content }}<br>
+                                    </li>
+
+                         </div>
+                                {% endif %}
+                            {% endfor %}
+                   {% endif %}
                 {% endfor %}
-       {% endif %}
-    {% endfor %}
-    {% endif %}
+                {% endif %}
 
-    </ul>
+                </ul>
   <br>
 
 

@@ -103,7 +103,6 @@ font-size: 100%;
 }
 
 .page{
-
     grid-area: page;
     border: white solid;
     text-align: center;

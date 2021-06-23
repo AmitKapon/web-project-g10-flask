@@ -2,20 +2,23 @@
 
 {% block details %}
 
+    <div class="contact-grid">
+        <div class="reccomands" ><br> פרטים אישיים
 
-     <form action="/updateDetails" METHOD="POST">
-                            <input type="number" class="field" name="clientID" value="{{ user[0][0] }}" disabled autocomplete="id" placeholder="תעודת זהות (6 ספרות אחרונות)">
-                            <input type="text" class="field" name="firstName"  value="{{ user[0][1] }}" autocomplete="firstname" placeholder="שם פרטי">
-                            <input type="text" class="field" name="lastName"  value="{{ user[0][2] }}" autocomplete="lastname" placeholder="שם משפחה">
-                            <input type="text" class="field" name="gender"  value="{{ user[0][3] }}" autocomplete="gender" placeholder="מין">
-                            <input type="text" class="field" name="phoneNumber"  value="{{ user[0][4] }}" autocomplete="phone" placeholder="טלפון">
-                            <input type="text" class="field" name="email"  value="{{ user[0][5] }}" autocomplete="email" placeholder="כתובת מייל">
-                            <input type="text" class="field" name="address"  value="{{ user[0][6] }}" autocomplete="address" placeholder="כתובת מגורים">
-                            <input type="password" class="field" name="password"  value="{{ user[0][7] }}" autocomplete="password" placeholder="סיסמה">
+            <form action="/updateDetails" METHOD="POST" >
+                                <input type="number" class="field" name="clientID" value="{{ user[0][0] }}" disabled autocomplete="id" placeholder="תעודת זהות (6 ספרות אחרונות)">
+                                <input type="text" class="field" name="firstName"  value="{{ user[0][1] }}" autocomplete="firstname" placeholder="שם פרטי">
+                                <input type="text" class="field" name="lastName"  value="{{ user[0][2] }}" autocomplete="lastname" placeholder="שם משפחה">
+                                <input type="text" class="field" name="gender"  value="{{ user[0][3] }}" autocomplete="gender" placeholder="מין">
+                                <input type="text" class="field" name="phoneNumber"  value="{{ user[0][4] }}" autocomplete="phone" placeholder="טלפון">
+                                <input type="text" class="field" name="email"  value="{{ user[0][5] }}" autocomplete="email" placeholder="כתובת מייל">
+                                <input type="text" class="field" name="address"  value="{{ user[0][6] }}" autocomplete="address" placeholder="כתובת מגורים">
+                                <input type="password" class="field" name="password"  value="{{ user[0][7] }}" autocomplete="password" placeholder="סיסמה">
 
-       				        <button class="btn" type="submit" >עדכן פרטים</button>
-        </form>
-
+                                <button class="btn" type="submit" style=" width:100%; background-color: #dd6c9f; color: white;">עדכון פרטים</button>
+            </form>
+        </div>
+     </div>
 
 
 {% for message in get_flashed_messages() %}

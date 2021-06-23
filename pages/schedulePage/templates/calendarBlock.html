@@ -2,41 +2,33 @@
 {% extends 'schedulePage.html' %}
 
 {% block calendar %}
+   <div class="page"><br>קביעת תורים
+<br><br>
+       <!--Page content-->
+        <form action="/chooseDate" method="post">
 
-{% for message in get_flashed_messages() %}
-                            <p>{{ message }}</p>
-                        {% endfor %}
+        <h3 style=" width:14%; background-color: #cd8d3f; text-align: right">בחר תאריך:</h3>
 
+           <select name="getMonth">
+                {% for option in answer %}
+                    <option name="chosenDate" value="{{ option.availableDT.year }}-{{ option.availableDT.month }}-{{ option.availableDT.day }} {{ option.availableDT.hour }}:{{ option.availableDT.minute }}:{{ option.availableDT.second }}">
+                     {{ option.availableDT.day }}.{{ option.availableDT.month }}.{{ option.availableDT.year }}  {{ option.availableDT.hour }}:{{ option.availableDT.minute }} <br>
+                    </option>
+                {% endfor %}
+           </select>
+            <button class="btn" type="submit" > בדוק זמינות </button>
+        </form>
 
-        <!--Page content-->
-<form action="/chooseDate" method="post">
+            <div>
+                 <br>
+                <h3 style=" width:14%; background-color: #7577ea; text-align: right"> תורים שנקבעו :</h3>
+            {{ check }}
+            </div>
 
-<h1>בחר תאריך</h1>
-<br>
-   <select name="getMonth">
-        {% for option in answer %}
-            <option name="chosenDate" value="{{ option.availableDT.year }}-{{ option.availableDT.month }}-{{ option.availableDT.day }} {{ option.availableDT.hour }}:{{ option.availableDT.minute }}:{{ option.availableDT.second }}">
-             {{ option.availableDT.day }}.{{ option.availableDT.month }}.{{ option.availableDT.year }}  {{ option.availableDT.hour }}:{{ option.availableDT.minute }} <br>
-            </option>
-        {% endfor %}
-   </select>
-
-
-    <button class="btn" type="submit" > בדוק זמינות </button>
-
-
-</form>
-
-    <div>
-        <h3> תורים שנקבעו :</h3>
-    {{ check }}
-    </div>
-
-
-        <!--contact bar-->
-
-
-
-
+     </div>
 
 {% endblock %}
+
+  {#{% for message in get_flashed_messages() %}
+                                    <p>{{ message }}</p>
+                                {% endfor %}#}

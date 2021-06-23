@@ -37,8 +37,6 @@ font-size: 100%;
     /*border: white solid;*/
     text-align: center;
     font-size: 200%;
-
-
 }
        .headerMenu{
            grid-area: nava;
@@ -46,13 +44,7 @@ font-size: 100%;
            border: white solid;
            text-align: left;
            font-size: 100%;
-
 }
-
-    /*   .headerMenu button{
-           padding-right: 30px;
-       }*/
-
 
 .button{
     grid-area: butt;
@@ -61,13 +53,18 @@ font-size: 100%;
 }
 
 .column{
-
     float: right ;
     margin-left: auto;
     margin-right: auto;
     padding: 0.5%;
 }
 
+.page{
+    grid-area: page;
+    border: white solid;
+    text-align: center;
+    font-size: 150%;
+}
 .image{
     grid-area: pict;
     /*border: white solid;*/
@@ -107,8 +104,8 @@ font-size: 100%;
 
 .contact{
     grid-area: con1;
-   /* border: white solid;
-    text-align: center;*/
+    border: white solid;
+    text-align: center;
     margin: auto;
 }
 
@@ -117,7 +114,6 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-
 }
 
 li {
