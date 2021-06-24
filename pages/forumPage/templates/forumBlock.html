@@ -31,8 +31,8 @@
 
 
                             {% for forumMessage1 in fullresponses %}
-                                {% if forumMessage1.responesClientID == forumMessage.clientIDforum %}
-                                      <li style=" width:100%; background-color: #db5793; color: antiquewhite; text-align: left"> משתמש: {{ forumMessage1.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}
+                                {% if ((forumMessage1.responesClientID == forumMessage.clientIDforum) and (forumMessage1.responesDT ==forumMessage.messageDT)) %}
+                                      <li style=" width:100%; background-color: #db5793; color: antiquewhite; text-align: left"> &#11176;תגובת משתמש: {{ forumMessage1.clientIDforum }} תאריך ושעה: {{ forumMessage.messageDT }}
                                          <li style=" width:100%; background-color: #cb8faa; color: black; text-align: left "> {{ forumMessage1.content }}<br>
                                     </li>
 

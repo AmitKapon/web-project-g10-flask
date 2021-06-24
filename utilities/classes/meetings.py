@@ -35,7 +35,11 @@ class Meeting:
                     delete from availablemeetings where availableDT='%s'
                            ''' %chosenDate)
 
-
+    def futureMeetings(self):
+        query = "SELECT * FROM futuremeetings where clientIDmeeting='%s'  " %session['userID']
+         # and availableDT.Month() = '%s' and availableDT.Day() = '%s'
+        query_result = dbManager.fetch(query)
+        return query_result
 
 
 

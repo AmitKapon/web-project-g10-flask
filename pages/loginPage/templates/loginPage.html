@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('aboutPage.static', filename='/css/aboutPage.css') }}" >
     <script src={{ url_for('personalStoryPage.static', filename='/js/personalStoryPage.js') }} > </script>
 
-    <title>עינת עשהאל- אודות</title>
+    <title>עינת עשהאל- התחברות</title>
 </head>
 <body>
 <div class="grid-container" >
@@ -27,6 +27,11 @@
 				        <input type="password" class="field" name="password" placeholder="סיסמא" required autocomplete="password">
 				        <button class="btn" type="submit" onclick="window.location.href='7_myAreaPage.html'">התחבר</button>
                     </form>
+
+{#                {% if session['connect_message'] == True %}#}
+{#                    <script>#}
+{#                        #}
+{#                    </script>#}
 
                     <form action="/singUp">
                           <button class="btn" onclick="window.location.href='7.2_SignUpPage.html'">הירשם עכשיו!</button>

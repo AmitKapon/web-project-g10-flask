@@ -16,13 +16,20 @@
                     </option>
                 {% endfor %}
            </select>
-            <button class="btn" type="submit" > בדוק זמינות </button>
+            <button class="btn" type="submit" > קביעת תור </button>
         </form>
 
             <div>
                  <br>
-                <h3 style=" width:14%; background-color: #7577ea; text-align: right"> תורים שנקבעו :</h3>
-            {{ check }}
+                <h3 style=" width:14%; background-color: #7577ea; text-align: right"> תורים שנקבעו:</h3>
+            <ol>
+                {% for date in check %}
+                    <li>
+                    {{ date.futureMeetingDT.year }}-{{ date.futureMeetingDT.month }}-{{ date.futureMeetingDT.day }} {{ date.futureMeetingDT.hour }}:{{ date.futureMeetingDT.minute }}:{{ date.futureMeetingDT.second }}
+                    </li>
+                {% endfor %}
+            </ol>
+
             </div>
 
      </div>

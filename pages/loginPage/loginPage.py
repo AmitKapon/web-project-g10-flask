@@ -1,8 +1,7 @@
 from flask import Blueprint, render_template
 from flask import Flask, redirect,  flash
 from flask import request, session
-import mysql.connector
-
+from tkinter import messagebox
 from utilities.classes.user import User
 from pages.homepage.homepage import homePage
 
@@ -48,25 +47,21 @@ def main_func_sin():
             email = request.form['email']
             password = request.form['password']
             answer = User.Check(email)
-            if (answer!= None ):
+            if (answer ):
                 session['logged_in'] = True
                 session['email'] = email
                 session['user_password'] = password
                 session['firstName']= answer[0][1]
                 session['userID'] = answer[0][0]
-                flash('You are in!')
-                flash(session['firstName'])
+                # flash('You are in!')
+                # flash(session['firstName'])
                 us=User()
                 firstname=us.firstName
+                # messagebox.showinfo('connected', 'Successfully connected')
+                return redirect('/loginPage')
             else:
-                flash('email not in the system!')
-
+                # flash('email not in the system!')
+                # messagebox.showinfo('not connected', 'Wrong details')
+                return redirect('/loginPage')
         return redirect('/homePage')
 
-
-# @loginPage.route('/toHome')
-#     def toHome():
-#         return redirect('/homePage')
-
-    # return render_template('../pages/homepage/templates/homepage.html',userId=userId,password=password,
-    #                        curr_user={'firstname': "Amit",'lastname': "David"})

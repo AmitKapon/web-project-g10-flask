@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('contactPage.static', filename='/css/contactPage.css') }}" >
     <title>עינת עשהאל- יצירת קשר</title>
+    <script src={{ url_for('contactPage.static', filename='/js/contactPage.js') }} > </script>
+
 </head>
 <body>
 
@@ -21,8 +23,11 @@
 				        <input type="email" class="field" id="email" name="email" placeholder="כתובת מייל" required autocomplete="email">
 				        <input type="tel" class="field"  id="phonenumber" name="phonenumber" placeholder="טלפון" required>
 				        <textarea placeholder="תוכן הפנייה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
-				        <button class="btn" type="submit" onclick="MessBox_contactMe(document.getElementById('Phone').value, document.getElementById('Email').value, document.getElementById('Comment').value)">שלח</button>
+				        <button class="btn" type="submit" onclick=" myFunction()">שליחה</button>
 			        </form>
+                            <script> function myFunction(){
+                                alert("תודה! ההודעה נשלחה.")
+                            } </script>
                 </div>
                     <ul class="details">
                         <li>

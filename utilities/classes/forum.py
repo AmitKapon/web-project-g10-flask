@@ -25,6 +25,7 @@ class Forum:
         dbManager.commit('''insert into forum_messags(clientIDforum,messageDT,title,content,responesClientID,responesDT)
         values (%s,%s,%s,%s,%s,%s)''', (self.clientIDforum,self.messageDT,self.title,self.content,self.responseClientID,self.responseDT)
                          )
+
     def getTopic(self):
         query = "SELECT title FROM forum_messags where responesClientID is NULL "
         # and availableDT.Month() = '%s' and availableDT.Day() = '%s'

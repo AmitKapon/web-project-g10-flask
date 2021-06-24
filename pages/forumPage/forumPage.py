@@ -48,7 +48,7 @@ def insert_comment():
         contentrequest = request.form['contentrequest']
         origin=Forum.searchTopic(getComment)
         comment= Forum()
-        comment.title= 'reply to ' + getComment
+        comment.title= getComment
         comment.clientIDforum = session['userID']
         comment.content= contentrequest
         comment.responseClientID = origin[0][0]
@@ -64,31 +64,4 @@ def goToComment():
          topicList = Forum.getTopic(x)
          return render_template('comment.html',topicList=topicList)
 
-@forumPage.route('/delete_user', methods=['GET', 'POST'])
-def delete_user():
-    if request.method == 'POST':
-        user_id = request.form['id']
-        query = "delete from users where id ='%s';" % user_id
-        dbManager(query, query_type='commit')
-        return redirect('/forumDisplay')
-    return redirect('/forumDisplay')
 
-
-@forumPage.route('/update_user', methods=['GET', 'POST'])
-def update_user():
-    if request.method == 'POST':
-        user_id = request.form['id']
-        if request.form['firstname']:
-            newFirstName = request.form['firstname']
-            query = "update users set firstname = '%s' where id ='%s';" % (newFirstName, user_id)
-            dbManager(query, query_type='commit')
-        if request.form['lastname']:
-            newLastName = request.form['lastname']
-            query = "update users set lastname = '%s' where id ='%s';" % (newLastName, user_id)
-            dbManager(query, query_type='commit')
-        if request.form['email']:
-            newEmail = request.form['email']
-            query = "update users set email = '%s' where id ='%s';" % (newEmail, user_id)
-            dbManager(query, query_type='commit')
-        return redirect('/users')
-    return redirect('/users')
