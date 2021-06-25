@@ -34,12 +34,6 @@ def signedUp():
             user.info()
   return redirect('/loginPage')
 
-# @loginPage.route('/signIn', methods=['GET', 'POST'])
-# def signIn():
-#     if request.method == 'GET':
-#     userId = request.form['username']
-#     password= request.form['password']
-#     User.Check(userId)
 
 @loginPage.route('/signIn', methods=['GET', 'POST'])
 def main_func_sin():
@@ -53,15 +47,10 @@ def main_func_sin():
                 session['user_password'] = password
                 session['firstName']= answer[0][1]
                 session['userID'] = answer[0][0]
-                # flash('You are in!')
-                # flash(session['firstName'])
                 us=User()
                 firstname=us.firstName
-                # messagebox.showinfo('connected', 'Successfully connected')
                 return redirect('/loginPage')
             else:
-                # flash('email not in the system!')
-                # messagebox.showinfo('not connected', 'Wrong details')
                 return redirect('/loginPage')
         return redirect('/homePage')
 

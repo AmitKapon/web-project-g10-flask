@@ -1,6 +1,6 @@
 
 // validation and messages of contact me page
-function MessBox_contactMe(phone,email,text){
+function MessBox_contactMe(phonenumber,email,text){
     var ValidPhone, ValidEmail,ValidText;
     var re = /^[0-9]{0,20}$/im;
     // checks if email address is valid
@@ -8,33 +8,28 @@ function MessBox_contactMe(phone,email,text){
         ValidEmail=true;
     } else {
         ValidEmail=false;
-        alert("Please enter valid Email address");
+        alert("בבקשה להכניס כתובת מייל חוקית");
 
     }// checks if phone is valid (0 to 20 characters) but not a must as input
-    if(re.test(phone)) {
+    if(re.test(phonenumber)) {
       ValidPhone=true;
     }
     else {
       ValidPhone=false;
-      alert("Please enter valid Phone Number");
+      alert("בבקשה להכניס מספר טלפון חוקי");
 
   }
    // text is a must
   if (!isNaN(text)) {
     ValidText = false;
-    alert("Please write something ..");
+    alert("בבקשה לרשום משהו בתיבת הפנייה");
   } else {
     ValidText=true;
   }
 
   // contact
-
     if(ValidEmail==true && ValidPhone==true && ValidText==true){
-      alert("Thank you! Your message has been received");
-/*
-      window.open("{{ url_for('main_page')}}" );
-      window.close();
-*/
+      alert("תודה רבה לך! ההודעה נשלחה");
+  }
+  }
 
-  }
-  }

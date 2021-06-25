@@ -19,16 +19,53 @@
             <div class="contact-grid">
                 <div class="contact-box">
                     <form action="/request" method="post">
-			            <input type="text" class="field" id="name" name="name" required autocomplete="name" placeholder="שם">
-				        <input type="email" class="field" id="email" name="email" placeholder="כתובת מייל" required autocomplete="email">
-				        <input type="tel" class="field"  id="phonenumber" name="phonenumber" placeholder="טלפון" required>
-				        <textarea placeholder="תוכן הפנייה"  id="contentrequest" name="contentrequest" class="field" required></textarea>
-				        <button class="btn" type="submit" onclick=" myFunction()">שליחה</button>
-			        </form>
-                            <script> function myFunction(){
-                                alert("תודה! ההודעה נשלחה.")
-                            } </script>
+
+                            <label for="name"></label>
+                            <input type="text" class="field" id="name" name="name" placeholder="שם" required>
+                            <label for="email"></label>
+                            <input type="text" class="field" id="email" name="email" placeholder="כתובת מייל" required>
+                            <label for="phonenumber"></label>
+                            <input type="text" class="field" id="phonenumber" name="phonenumber" placeholder="טלפון">
+                            <label for="contentrequest"></label>
+                            <textarea  id="contentrequest" class="field" name="contentrequest" cols="50" rows="4" placeholder="תוכן הפנייה" width="60%"  required></textarea>
+                            <button  type="submit" class="btn" onclick="MessBox_contactMe(document.getElementById('phonenumber').value, document.getElementById('email').value, document.getElementById('contentrequest').value)">שליחה</button>
+                    </form>
+
                 </div>
+
+                   <!--contact form-->
+            <form action="/request" method="post">
+
+            </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     <ul class="details">
                         <li>
                             <span class="detail-content">הכלנית 7 סביון</span>

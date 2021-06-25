@@ -26,3 +26,4 @@ def main_func():
         ct.info()
 
     return redirect('/contactPage')
+
